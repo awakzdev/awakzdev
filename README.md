@@ -83,19 +83,7 @@
 
 <br/>  
 
-
-
-<br/>  
-
   
-
-<br/>  
-
-<div align="center">
-<img src="https://komarev.com/ghpvc/?username=awakzdev&&style=flat-square" align="center" />
-</div>  
-  
-
 <br/>  
 
 <div align="center">
