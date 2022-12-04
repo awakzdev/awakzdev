@@ -7,6 +7,12 @@
 
 <a href=#><img src="contributions.svg"></a>
 
+<p align="center"> 
+  Visitor count<br>
+  <img src="https://profile-counter.glitch.me/awakzdev/count.svg" />
+</p>
+
+
 <hr>
 
 - 🌱 I’m currently learning Terraform and Cloud  
