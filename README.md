@@ -5,6 +5,8 @@
  
 ### <div align="center">I'm Elazar, a full-time DevOps Engineer 👨‍💻  🚀</div>  
 
+<a href=#><img src="contributions.svg"></a>
+
 <hr>
 
 - 🌱 I’m currently learning Terraform and Cloud  
