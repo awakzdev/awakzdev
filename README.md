@@ -37,8 +37,9 @@
 
 <br/>  
 
- 
-<div align="center"><img src="https://github-readme-stats.vercel.app/api?username=awakzdev&show_icons=true&count_private=true&hide_border=true" align="center" /></div>
+<div align="center">
+<img src="https://raw.githubusercontent.com/awakzdev/awakzdev/main/ganesha.jpeg#gh-dark-mode-only" align="center" height="325" />
+</div>  
   
 <br/>  
 
