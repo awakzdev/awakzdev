@@ -15,6 +15,8 @@
 
 <hr>
 
+- 🌱 I’m currently learning Terraform and Cloud  
+- ⚡ Fun fact: I would like to become a digital nomad
 - ✉️ How to reach me [zenmyx@gmail.com](mailto:zenmyx@gmail.com)  
 
 <br/>  
