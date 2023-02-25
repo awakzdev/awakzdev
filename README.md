@@ -15,7 +15,7 @@
 
 <hr>
 
-- 🌱 I’m currently learning Terraform and Cloud - ✓
+- 🌱 I’m currently learning Machine Learning.
 - ⚡ Fun fact: I would like to become a digital nomad
 - ✉️ How to reach me [zenmyx@gmail.com](mailto:zenmyx@gmail.com)  
 
