@@ -16,7 +16,7 @@
 <hr>
 
 - 🌱 I’m currently learning Machine Learning.
-- ⚡ Fun fact: I would like to become a digital nomad
+- ⚡ Fun fact: I am a digital nomad!
 - ✉️ How to reach me [zenmyx@gmail.com](mailto:zenmyx@gmail.com)  
 
 <br/>  
