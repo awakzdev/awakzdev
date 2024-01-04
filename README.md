@@ -15,10 +15,7 @@
 
 <hr>
 
-- 🌱 I’m currently learning Machine Learning.
-- ⚡ Fun fact: I am a digital nomad!
-- ✉️ How to reach me [zenmyx@gmail.com](mailto:zenmyx@gmail.com)  
-
+<h3 align="center">🌌 In a world as vast as the starlit sky, I find my inspiration among the twinkling fireflies. These tiny luminescent wonders remind me that even the smallest light can brighten the darkest night. 🌟</h3>
 <br/>  
 
 </td></tr></table>  
@@ -29,10 +26,14 @@
 
  
 <div align="center">
-<a href="https://linkedin.com/in/ellie-chodjayev" target="_blank">
-<img src=https://img.shields.io/badge/linkedin-%231E77B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white alt=linkedin style="margin-bottom: 5px;" />
-</a>  
-</div>  
+  <a href="https://linkedin.com/in/ellie-chodjayev" target="_blank">
+    <img src="https://img.shields.io/badge/linkedin-%231E77B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" alt="linkedin" style="margin-bottom: 5px;" />
+  </a>
+  <a href="mailto:zenmyx@gmail.com">
+    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="email" style="margin-bottom: 5px;"/>
+  </a>
+</div>
+
   
 
 <br/>  
