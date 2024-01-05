@@ -15,12 +15,12 @@
 
 <hr>
 
-<h3 align="center">🌌 In a world as vast as the starlit sky, I find my inspiration among the twinkling fireflies. These tiny luminescent wonders remind me that even the smallest light can brighten the darkest night. 🌟</h3>
+<h7 align="center">🌌 In a world as vast as the starlit sky, I find my inspiration among the twinkling fireflies. These tiny luminescent wonders remind me that even the smallest light can brighten the darkest night. 🌟</h7>
 <br/>  
 
 </td></tr></table>  
 
-
+- ⚡ Fun fact: I am a digital nomad!
 
 <br/>  
 
