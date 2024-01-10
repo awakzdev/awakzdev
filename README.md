@@ -20,8 +20,6 @@
 
 </td></tr></table>  
 
-- ⚡ Fun fact: I am a digital nomad!
-
 <br/>  
 
  
