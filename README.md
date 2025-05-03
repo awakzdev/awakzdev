@@ -9,7 +9,7 @@
 
 ###
 
-<img align="right" height="130" src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExenZqMG8zZzhtNmpxdndkbmlhdGxibGhkenVpMGt0aTdzeWt1ZmRseSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/9Dk1b9ZQt98GShqy8P/giphy.gif"  />
+<img align="right" height="130" src="https://github.com/awakzdev/awakzdev/blob/main/sloth.gif"  />
 
 ###
 
