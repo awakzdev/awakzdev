@@ -234,7 +234,7 @@
 
     .hero-panel {
       width: 100%;
-      max-width: 360px;
+      max-width: 420px;
       background: linear-gradient(180deg, rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.7));
       border: 1px solid var(--border);
       border-radius: 18px;
@@ -290,7 +290,7 @@
 
     .hero-focus-row {
       display: grid;
-      grid-template-columns: 88px 1fr;
+      grid-template-columns: 104px 1fr;
       gap: 0.8rem;
       align-items: start;
     }
@@ -731,10 +731,7 @@
             pushed release cycles to <strong>under 15 minutes</strong>, and cut roughly <strong>$18K/year</strong>
             in tooling costs.
           </p>
-          <p class="hero-note">
-            My focus is Kubernetes-led platforms, multi-cloud infrastructure, and DevSecOps: secure, observable systems
-            that are predictable to ship and intentionally boring to run in production.
-          </p>
+
 
           <div class="cert-badges">
             <span class="cert-badge">
@@ -796,12 +793,20 @@
                 <span>Kubernetes, Terraform, Terragrunt, CloudFormation</span>
               </div>
               <div class="hero-focus-row">
+                <strong>Languages</strong>
+                <span>Python, Node.js, TypeScript, Bash, PowerShell, C#</span>
+              </div>
+              <div class="hero-focus-row">
                 <strong>Delivery</strong>
                 <span>GitHub Actions, GitLab CI, Azure DevOps, AWS CodeBuild/Deploy, Jenkins</span>
               </div>
               <div class="hero-focus-row">
+                <strong>Monitoring</strong>
+                <span>Grafana, Prometheus, ELK, CloudWatch, Cloud Monitoring, Azure Monitor</span>
+              </div>
+              <div class="hero-focus-row">
                 <strong>Security</strong>
-                <span>DevSecOps, Zero Trust, Checkmarx, Orca, QRadar SIEM</span>
+                <span>Zero Trust, IAM, WAF, SAST, SCA, SBOM, Secret Detection, CIS Hardening, Checkmarx, Orca, QRadar SIEM</span>
               </div>
             </div>
           </div>
@@ -847,6 +852,30 @@
         <div class="project-card fade-in">
           <div class="project-card-header">
             <div class="project-icon">
+              <i data-lucide="lock" style="width:18px;height:18px;"></i>
+            </div>
+            <h3 class="project-name">monday-audit-pipeline</h3>
+          </div>
+          <p class="project-description">Serverless pipeline that retrieves Monday.com activity logs and forwards them to a SIEM. KMS encryption, least-privilege IAM, and Secrets Manager — deployed inside an enterprise AWS Landing Zone via Terragrunt.</p>
+          <div class="stack-tags">
+            <span class="tag">HCL</span>
+            <span class="tag">Terraform</span>
+            <span class="tag">Terragrunt</span>
+            <span class="tag">Lambda</span>
+            <span class="tag">Python 3.11</span>
+            <span class="tag">KMS</span>
+            <span class="tag">Secrets Manager</span>
+          </div>
+          <a href="https://github.com/awakzdev/monday-audit-pipeline" target="_blank" rel="noopener" class="project-link">
+            <i data-lucide="github" style="width:13px;height:13px;"></i>
+            View on GitHub
+          </a>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="project-card fade-in">
+          <div class="project-card-header">
+            <div class="project-icon">
               <i data-lucide="shield-check" style="width:18px;height:18px;"></i>
             </div>
             <h3 class="project-name">gitlab-devsecops-ci</h3>
@@ -864,7 +893,7 @@
           </a>
         </div>
 
-        <!-- Card 3 -->
+        <!-- Card 4 -->
         <div class="project-card fade-in">
           <div class="project-card-header">
             <div class="project-icon">
@@ -886,7 +915,7 @@
           </a>
         </div>
 
-        <!-- Card 4 -->
+        <!-- Card 5 -->
         <div class="project-card fade-in">
           <div class="project-card-header">
             <div class="project-icon">
