@@ -450,6 +450,7 @@
     /* ─── PROJECTS ─── */
     #projects {
       padding-top: 4.5rem;
+      scroll-margin-top: var(--nav-height);
     }
 
     .projects-grid {
@@ -571,7 +572,12 @@
     /* ─── CONTACT ─── */
     #contact {
       padding-top: 5rem;
-      padding-bottom: 6rem;
+      padding-bottom: 5rem;
+      min-height: calc(100vh - var(--nav-height));
+      scroll-margin-top: var(--nav-height);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .contact-card {
