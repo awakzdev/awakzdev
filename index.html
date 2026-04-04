@@ -1341,6 +1341,14 @@
       e.preventDefault();
       window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
     });
+
+    // Scroll projects flush under nav
+    document.querySelector('.nav-links a[href="#projects"]').addEventListener('click', function (e) {
+      e.preventDefault();
+      const navH = document.querySelector('nav').offsetHeight;
+      const top = document.getElementById('projects').getBoundingClientRect().top + window.pageYOffset - navH;
+      window.scrollTo({ top, behavior: 'smooth' });
+    });
   </script>
 
 </body>
