@@ -40,7 +40,7 @@
 ###
 
 <div align="center">
-  <img src="https://profile-counter.glitch.me/awakzdev/count.svg?"  />
+  <img src="https://visitor-badge.glitch.me/badge?page_id=awakzdev.awakzdev" alt="visitor badge" />
 </div>
 
 ###
