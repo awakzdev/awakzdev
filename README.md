@@ -40,7 +40,7 @@
 ###
 
 <div align="center">
-  <img src="https://visitor-badge.glitch.me/badge?page_id=awakzdev.awakzdev" alt="visitor badge" />
+  <img src="https://komarev.com/ghpvc/?username=awakzdev&label=Profile%20views&color=14b8a6&style=for-the-badge" alt="Profile views badge" />
 </div>
 
 ###
