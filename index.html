@@ -39,6 +39,7 @@
     }
 
     body {
+      position: relative;
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       background:
         radial-gradient(circle at top left, rgba(45, 212, 191, 0.08), transparent 24%),
@@ -51,6 +52,21 @@
 
     a, button {
       -webkit-tap-highlight-color: transparent;
+    }
+
+    .page-particle-canvas {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.9;
+    }
+
+    nav, main, footer {
+      position: relative;
+      z-index: 1;
     }
 
     :focus-visible {
@@ -126,6 +142,7 @@
       min-height: calc(100vh - var(--nav-height));
       display: flex;
       align-items: center;
+      position: relative;
       padding-top: calc(var(--nav-height) + 2.25rem);
       padding-bottom: 4.5rem;
     }
@@ -571,28 +588,52 @@
 
     /* ─── CONTACT ─── */
     #contact {
-      padding-top: 5rem;
-      padding-bottom: 5rem;
+      padding-top: 4.5rem;
+      padding-bottom: 4.5rem;
       min-height: calc(100vh - var(--nav-height));
-      scroll-margin-top: var(--nav-height);
       display: flex;
       flex-direction: column;
       justify-content: center;
+      scroll-margin-top: var(--nav-height);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-shell {
+      position: relative;
+      z-index: 1;
+      max-width: 860px;
+      margin: 0 auto;
     }
 
     .contact-card {
-      background: var(--surface);
+      background:
+        linear-gradient(180deg, rgba(15, 23, 42, 0.88), rgba(9, 13, 22, 0.92)),
+        radial-gradient(circle at top center, rgba(45, 212, 191, 0.1), transparent 52%);
       border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 3.5rem;
-      text-align: center;
+      border-radius: 22px;
+      padding: 3rem;
       position: relative;
       overflow: hidden;
-      backdrop-filter: blur(10px);
+      text-align: center;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 18px 42px rgba(2, 6, 23, 0.26);
     }
 
-    .contact-card::after {
-      display: none;
+    .contact-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(45, 212, 191, 0.08), transparent 24%);
+      pointer-events: none;
+    }
+
+    .contact-main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      z-index: 1;
     }
 
     .contact-status {
@@ -620,38 +661,69 @@
     }
 
     .contact-title {
-      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
       font-weight: 700;
-      letter-spacing: -0.03em;
-      margin-bottom: 0.75rem;
+      letter-spacing: -0.04em;
+      line-height: 1.06;
+      margin-bottom: 1rem;
+      max-width: 13ch;
+      text-wrap: balance;
     }
 
     .contact-sub {
-      font-size: 0.95rem;
-      color: var(--text-muted);
+      font-size: 0.98rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.4rem;
+      max-width: 620px;
+      line-height: 1.75;
+    }
+
+    .contact-meta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.55rem;
       margin-bottom: 2rem;
-      max-width: 420px;
-      margin-left: auto;
-      margin-right: auto;
-      line-height: 1.65;
+      max-width: 720px;
+    }
+
+    .contact-meta span {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.42rem 0.78rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.035);
+      font-size: 0.76rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      letter-spacing: 0.02em;
     }
 
     .contact-actions {
       display: flex;
-      justify-content: center;
+      align-items: center;
       flex-wrap: wrap;
+      justify-content: center;
       gap: 0.75rem;
     }
 
     /* ─── FOOTER ─── */
     footer {
       border-top: 1px solid var(--border);
-      padding: 1.5rem 2rem;
+      padding: 1.5rem 2rem 2rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 1rem;
       max-width: 1100px;
       margin: 0 auto;
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
     }
 
     .footer-text {
@@ -661,6 +733,15 @@
 
     .footer-text span {
       color: var(--accent);
+    }
+
+    .footer-availability {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      white-space: nowrap;
     }
 
     /* ─── RESPONSIVE ─── */
@@ -709,13 +790,22 @@
       }
 
       .contact-card {
-        padding: 2.5rem 1.5rem;
+        padding: 2.4rem 1.5rem;
+        border-radius: 20px;
+      }
+
+      .contact-main {
+        text-align: center;
+      }
+
+      .contact-title {
+        max-width: none;
       }
 
       footer {
         padding: 1.25rem;
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 0.75rem;
         text-align: center;
       }
 
@@ -743,6 +833,15 @@
       .cert-badge {
         font-size: 0.72rem;
         padding: 0.35rem 0.7rem;
+      }
+
+      .contact-actions {
+        width: 100%;
+      }
+
+      .contact-actions .btn {
+        width: 100%;
+        justify-content: center;
       }
     }
 
@@ -857,6 +956,7 @@
   </style>
 </head>
 <body>
+  <canvas id="page-particle-canvas" class="page-particle-canvas" aria-hidden="true"></canvas>
 
   <!-- NAV -->
   <nav>
@@ -871,9 +971,8 @@
   <main>
 
     <!-- HERO -->
-    <section id="hero" style="position:relative;">
-      <canvas id="particle-canvas" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;"></canvas>
-      <div class="hero-grid" style="position:relative;z-index:1;">
+    <section id="hero">
+      <div class="hero-grid">
         <div class="hero-main">
           <div class="hero-eyebrow">Available for contract</div>
           <h1 class="hero-name">Eliazar C.</h1>
@@ -1179,28 +1278,40 @@
 
     <!-- CONTACT -->
     <section id="contact">
-      <div class="contact-card fade-in">
-        <div class="contact-status">
-          <span class="status-dot"></span>
-          Available for contract
-        </div>
-        <h2 class="contact-title">Let's build something solid.</h2>
-        <p class="contact-sub">Open to cloud infrastructure, DevSecOps, and platform engineering contracts. Based in Israel, working globally.</p>
-        <div class="contact-actions">
-          <a href="https://www.linkedin.com/in/ellie-chodjayev/" target="_blank" rel="noopener" class="btn btn-primary">
-            <!-- LinkedIn inline SVG (replaces data-lucide="linkedin") -->
-            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false" style="display:inline-block;vertical-align:middle">
-              <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5V24H0zM7.5 8h4.8v2.2h.1c.67-1.27 2.31-2.2 3.8-2.2 4.06 0 4.8 2.67 4.8 6.14V24H20V14.6c0-2.23-.04-5.1-3.1-5.1-3.11 0-3.58 2.43-3.58 4.96V24H7.5z"/>
-            </svg>
-             LinkedIn
-          </a>
-          <a href="https://github.com/awakzdev" target="_blank" rel="noopener" class="btn btn-outline">
-            <!-- GitHub inline SVG (replaces data-lucide="github") -->
-            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false" style="display:inline-block;vertical-align:middle">
-              <path d="M12 0C5.37 0 0 5.37 0 12a12 12 0 008.21 11.41c.6.11.82-.26.82-.58v-2.17c-3.34.73-4.04-1.61-4.04-1.61-.55-1.41-1.35-1.79-1.35-1.79-1.1-.76.08-.74.08-.74 1.22.08 1.86 1.25 1.86 1.25 1.08 1.85 2.83 1.32 3.52 1.01.11-.79.42-1.32.76-1.62-2.66-.3-5.46-1.33-5.46-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.51.12-3.15 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 016 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.64.24 2.85.12 3.15.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.63-5.47 5.93.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12 12 0 0024 12C24 5.37 18.63 0 12 0z"/>
-            </svg>
-             GitHub
-          </a>
+      <div class="contact-shell fade-in">
+        <div class="contact-card">
+          <div class="contact-main">
+            <div class="contact-status">
+              <span class="status-dot"></span>
+              Available for contract
+            </div>
+            <h2 class="contact-title">Let&apos;s build something solid.</h2>
+            <p class="contact-sub">Open to cloud infrastructure, DevSecOps, and platform engineering work across AWS, GCP, and Azure.</p>
+
+            <div class="contact-meta">
+              <span>AWS / GCP / Azure</span>
+              <span>Platform engineering</span>
+              <span>DevSecOps delivery</span>
+              <span>Israel · global contracts</span>
+            </div>
+
+            <div class="contact-actions">
+              <a href="https://www.linkedin.com/in/ellie-chodjayev/" target="_blank" rel="noopener" class="btn btn-primary">
+                <!-- LinkedIn inline SVG (replaces data-lucide="linkedin") -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false" style="display:inline-block;vertical-align:middle">
+                  <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5V24H0zM7.5 8h4.8v2.2h.1c.67-1.27 2.31-2.2 3.8-2.2 4.06 0 4.8 2.67 4.8 6.14V24H20V14.6c0-2.23-.04-5.1-3.1-5.1-3.11 0-3.58 2.43-3.58 4.96V24H7.5z"/>
+                </svg>
+                LinkedIn
+              </a>
+              <a href="https://github.com/awakzdev" target="_blank" rel="noopener" class="btn btn-outline">
+                <!-- GitHub inline SVG (replaces data-lucide="github") -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false" style="display:inline-block;vertical-align:middle">
+                  <path d="M12 0C5.37 0 0 5.37 0 12a12 12 0 008.21 11.41c.6.11.82-.26.82-.58v-2.17c-3.34.73-4.04-1.61-4.04-1.61-.55-1.41-1.35-1.79-1.35-1.79-1.1-.76.08-.74.08-.74 1.22.08 1.86 1.25 1.86 1.25 1.08 1.85 2.83 1.32 3.52 1.01.11-.79.42-1.32.76-1.62-2.66-.3-5.46-1.33-5.46-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.51.12-3.15 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 016 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.64.24 2.85.12 3.15.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.63-5.47 5.93.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12 12 0 0024 12C24 5.37 18.63 0 12 0z"/>
+                </svg>
+                GitHub
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1208,8 +1319,13 @@
   </main>
 
   <footer>
-    <p class="footer-text">Eliazar Chodjayev. &mdash; <span>Senior DevSecOps Engineer</span></p>
-    <p class="footer-text">Israel &middot; Open to global contracts</p>
+    <div class="footer-brand">
+      <p class="footer-text">Eliazar Chodjayev - <span>Senior DevSecOps Engineer / Cloud Architect</span></p>
+    </div>
+    <p class="footer-availability">
+      <span class="status-dot"></span>
+      Open to global contracts
+    </p>
   </footer>
 
   <script>
@@ -1221,15 +1337,20 @@
     // ─── PARTICLE NETWORK ───
     (function () {
       if (prefersReducedMotion) return;
-      const canvas = document.getElementById('particle-canvas');
+      const canvas = document.getElementById('page-particle-canvas');
+      if (!canvas) return;
       const ctx = canvas.getContext('2d');
-      const COUNT = 48;
-      const LINK_DIST = 130;
+      const COUNT = 54;
+      const LINK_DIST = 140;
+      const DPR = Math.min(window.devicePixelRatio || 1, 2);
       let W, H, particles = [];
 
       function resize() {
-        W = canvas.width  = canvas.offsetWidth;
-        H = canvas.height = canvas.offsetHeight;
+        W = window.innerWidth;
+        H = window.innerHeight;
+        canvas.width = Math.floor(W * DPR);
+        canvas.height = Math.floor(H * DPR);
+        ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
       }
 
       function init() {
@@ -1273,7 +1394,7 @@
         requestAnimationFrame(tick);
       }
 
-      window.addEventListener('resize', () => { resize(); init(); });
+      window.addEventListener('resize', () => { resize(); init(); }, { passive: true });
       resize(); init(); tick();
     })();
 
@@ -1393,18 +1514,31 @@
     window.addEventListener('scroll', setActiveLink, { passive: true });
     window.addEventListener('load', setActiveLink);
 
-    // Scroll to bottom when clicking Contact
-    document.querySelector('.nav-links a[href="#contact"]').addEventListener('click', function (e) {
-      e.preventDefault();
-      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    const scrollToSection = (sectionId) => {
+      const navH = document.querySelector('nav').offsetHeight;
+      const target = document.getElementById(sectionId);
+      if (!target) return;
+      const top = target.getBoundingClientRect().top + window.pageYOffset - navH;
+      window.scrollTo({ top, behavior: 'smooth' });
+    };
+
+    const scrollToPageBottom = () => {
+      const top = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+      window.scrollTo({ top, behavior: 'smooth' });
+    };
+
+    document.querySelectorAll('a[href="#projects"]').forEach((link) => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        scrollToSection('projects');
+      });
     });
 
-    // Scroll projects flush under nav
-    document.querySelector('.nav-links a[href="#projects"]').addEventListener('click', function (e) {
-      e.preventDefault();
-      const navH = document.querySelector('nav').offsetHeight;
-      const top = document.getElementById('projects').getBoundingClientRect().top + window.pageYOffset - navH;
-      window.scrollTo({ top, behavior: 'smooth' });
+    document.querySelectorAll('a[href="#contact"]').forEach((link) => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        scrollToPageBottom();
+      });
     });
   </script>
 
