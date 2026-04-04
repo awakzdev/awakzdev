@@ -169,6 +169,12 @@
       line-height: 1.05;
       margin-bottom: 1rem;
       color: var(--text-primary);
+      background: linear-gradient(120deg, #eef2ff 20%, #2dd4bf 50%, #38bdf8 72%, #eef2ff 92%);
+      background-size: 250% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: fade-up 0.8s ease both 0.3s, gradient-shift 8s ease 1.5s infinite;
     }
 
     .hero-title {
@@ -281,33 +287,94 @@
       color: var(--text-muted);
     }
 
-    .hero-focus {
-      display: grid;
-      gap: 0.7rem;
+    /* ─── STACK TABS ─── */
+    .stack-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.2rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1rem;
       padding-top: 1rem;
-      border-top: 1px solid var(--border);
     }
 
-    .hero-focus-row {
-      display: grid;
-      grid-template-columns: 104px 1fr;
-      gap: 0.8rem;
-      align-items: start;
-    }
-
-    .hero-focus-row strong {
-      font-size: 0.72rem;
+    .stack-tab {
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      padding: 0.4rem 0.65rem;
+      font-family: inherit;
+      font-size: 0.7rem;
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--text-secondary);
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: color 0.2s, border-color 0.2s;
     }
 
-    .hero-focus-row span {
-      font-size: 0.84rem;
-      line-height: 1.55;
-      color: var(--text-primary);
+    .stack-tab:hover { color: var(--text-secondary); }
+
+    .stack-tab.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
     }
+
+    .stack-content {
+      display: none;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      min-height: 104px;
+      align-content: flex-start;
+    }
+
+    .stack-content.active { display: flex; }
+
+    @keyframes pill-in {
+      from { opacity: 0; transform: translateY(7px) scale(0.93); }
+      to   { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .stack-pill {
+      padding: 0.28rem 0.65rem;
+      background: rgba(45, 212, 191, 0.05);
+      border: 1px solid rgba(45, 212, 191, 0.16);
+      border-radius: var(--radius-pill);
+      font-size: 0.74rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      opacity: 0;
+      animation: pill-in 0.32s ease forwards;
+      transition: background 0.18s, border-color 0.18s, color 0.18s, box-shadow 0.18s, transform 0.18s;
+    }
+
+    .stack-pill:hover {
+      background: rgba(45, 212, 191, 0.14);
+      border-color: rgba(45, 212, 191, 0.45);
+      color: var(--accent);
+      box-shadow: 0 0 14px rgba(45, 212, 191, 0.18);
+      transform: translateY(-1px);
+    }
+
+    /* ─── CARD SPOTLIGHT ─── */
+    .project-card {
+      --mx: 50%; --my: 50%;
+    }
+
+    .project-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(200px circle at var(--mx) var(--my), rgba(45, 212, 191, 0.08), transparent 70%);
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .project-card:hover::after { opacity: 1; }
+
+    .project-card > * { position: relative; z-index: 1; }
 
     .btn {
       display: inline-flex;
@@ -685,6 +752,70 @@
       transform: translateY(0);
     }
 
+    /* ─── ENTRANCE & MOTION ANIMATIONS ─── */
+    @keyframes fade-up {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fade-right {
+      from { opacity: 0; transform: translateX(-22px); }
+      to   { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes float-panel {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-10px); }
+    }
+    @keyframes gradient-shift {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    @keyframes pulse-ring {
+      0%   { box-shadow: 0 0 0 0 rgba(45, 212, 191, 0.55); }
+      70%  { box-shadow: 0 0 0 9px rgba(45, 212, 191, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(45, 212, 191, 0); }
+    }
+    @keyframes blink-cursor {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0; }
+    }
+    @keyframes nav-slide-down {
+      from { opacity: 0; transform: translateY(-12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    nav { animation: nav-slide-down 0.5s ease both 0.05s; }
+
+    .hero-eyebrow { animation: fade-right 0.6s ease both 0.15s; }
+    .hero-title   { animation: fade-up 0.7s ease both 0.45s; }
+    .hero-summary { animation: fade-up 0.7s ease both 0.6s; }
+    .cert-badges  { animation: fade-up 0.7s ease both 0.72s; }
+    .hero-actions { animation: fade-up 0.7s ease both 0.86s; }
+    .hero-panel   { animation: fade-up 0.9s ease both 0.5s, float-panel 7s ease-in-out 1.8s infinite; }
+
+    .hero-title::after {
+      content: '|';
+      color: var(--accent);
+      margin-left: 3px;
+      font-weight: 300;
+      opacity: 0.75;
+      animation: blink-cursor 1.2s step-end infinite;
+    }
+
+    .status-dot { animation: pulse-ring 2.2s ease-out infinite; }
+
+    .nav-logo { transition: text-shadow 0.3s ease; }
+    .nav-logo:hover { text-shadow: 0 0 20px rgba(45, 212, 191, 0.55); }
+
+    .cert-badge {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      cursor: default;
+    }
+    .cert-badge:hover {
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 4px 18px rgba(45, 212, 191, 0.22);
+    }
+
     @media (prefers-reduced-motion: reduce) {
       html {
         scroll-behavior: auto;
@@ -701,6 +832,21 @@
         opacity: 1;
         transform: none;
       }
+
+      nav,
+      .hero-eyebrow, .hero-title, .hero-summary,
+      .cert-badges, .hero-actions {
+        animation: none !important;
+        opacity: 1;
+      }
+      .hero-name {
+        background: none !important;
+        -webkit-text-fill-color: var(--text-primary) !important;
+        animation: none !important;
+      }
+      .hero-panel { animation: none !important; }
+      .hero-title::after { display: none; }
+      .status-dot { animation: none !important; }
     }
   </style>
 </head>
@@ -720,7 +866,8 @@
 
     <!-- HERO -->
     <section id="hero" style="position:relative;">
-      <div class="hero-grid">
+      <canvas id="particle-canvas" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;"></canvas>
+      <div class="hero-grid" style="position:relative;z-index:1;">
         <div class="hero-main">
           <div class="hero-eyebrow">Available for contract</div>
           <h1 class="hero-name">Elazar C.</h1>
@@ -783,31 +930,63 @@
               </div>
             </div>
 
-            <div class="hero-focus">
-              <div class="hero-focus-row">
-                <strong>Cloud</strong>
-                <span>AWS, GCP, Azure</span>
-              </div>
-              <div class="hero-focus-row">
-                <strong>Platform</strong>
-                <span>Kubernetes, Terraform, Terragrunt, CloudFormation</span>
-              </div>
-              <div class="hero-focus-row">
-                <strong>Languages</strong>
-                <span>Python, Node.js, TypeScript, Bash, PowerShell, C#</span>
-              </div>
-              <div class="hero-focus-row">
-                <strong>Delivery</strong>
-                <span>GitHub Actions, GitLab CI, Azure DevOps, AWS CodeBuild/Deploy, Jenkins</span>
-              </div>
-              <div class="hero-focus-row">
-                <strong>Monitoring</strong>
-                <span>Grafana, Prometheus, ELK, CloudWatch, Cloud Monitoring, Azure Monitor</span>
-              </div>
-              <div class="hero-focus-row">
-                <strong>Security</strong>
-                <span>Zero Trust, IAM, WAF, SAST, SCA, SBOM, Secret Detection, CIS Hardening, Checkmarx, Orca, QRadar SIEM</span>
-              </div>
+            <div class="stack-tabs">
+              <button class="stack-tab active" data-cat="cloud">Cloud</button>
+              <button class="stack-tab" data-cat="platform">Platform</button>
+              <button class="stack-tab" data-cat="langs">Languages</button>
+              <button class="stack-tab" data-cat="delivery">Delivery</button>
+              <button class="stack-tab" data-cat="monitoring">Monitoring</button>
+              <button class="stack-tab" data-cat="security">Security</button>
+            </div>
+
+            <div class="stack-content active" data-cat="cloud">
+              <span class="stack-pill">AWS</span>
+              <span class="stack-pill">GCP</span>
+              <span class="stack-pill">Azure</span>
+            </div>
+            <div class="stack-content" data-cat="platform">
+              <span class="stack-pill">Kubernetes</span>
+              <span class="stack-pill">Terraform</span>
+              <span class="stack-pill">Terragrunt</span>
+              <span class="stack-pill">CloudFormation</span>
+              <span class="stack-pill">ArgoCD</span>
+              <span class="stack-pill">Helm</span>
+            </div>
+            <div class="stack-content" data-cat="langs">
+              <span class="stack-pill">Python</span>
+              <span class="stack-pill">Node.js</span>
+              <span class="stack-pill">TypeScript</span>
+              <span class="stack-pill">Bash</span>
+              <span class="stack-pill">PowerShell</span>
+              <span class="stack-pill">C#</span>
+            </div>
+            <div class="stack-content" data-cat="delivery">
+              <span class="stack-pill">GitHub Actions</span>
+              <span class="stack-pill">GitLab CI</span>
+              <span class="stack-pill">Azure DevOps</span>
+              <span class="stack-pill">AWS CodeBuild</span>
+              <span class="stack-pill">Jenkins</span>
+            </div>
+            <div class="stack-content" data-cat="monitoring">
+              <span class="stack-pill">Grafana</span>
+              <span class="stack-pill">Prometheus</span>
+              <span class="stack-pill">ELK</span>
+              <span class="stack-pill">CloudWatch</span>
+              <span class="stack-pill">Cloud Monitoring</span>
+              <span class="stack-pill">Azure Monitor</span>
+            </div>
+            <div class="stack-content" data-cat="security">
+              <span class="stack-pill">Zero Trust</span>
+              <span class="stack-pill">IAM</span>
+              <span class="stack-pill">WAF</span>
+              <span class="stack-pill">SAST</span>
+              <span class="stack-pill">SCA</span>
+              <span class="stack-pill">SBOM</span>
+              <span class="stack-pill">Secret Detection</span>
+              <span class="stack-pill">CIS Hardening</span>
+              <span class="stack-pill">Checkmarx</span>
+              <span class="stack-pill">Orca</span>
+              <span class="stack-pill">QRadar SIEM</span>
             </div>
           </div>
         </aside>
@@ -975,6 +1154,100 @@
     lucide.createIcons();
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // ─── PARTICLE NETWORK ───
+    (function () {
+      if (prefersReducedMotion) return;
+      const canvas = document.getElementById('particle-canvas');
+      const ctx = canvas.getContext('2d');
+      const COUNT = 48;
+      const LINK_DIST = 130;
+      let W, H, particles = [];
+
+      function resize() {
+        W = canvas.width  = canvas.offsetWidth;
+        H = canvas.height = canvas.offsetHeight;
+      }
+
+      function init() {
+        particles = Array.from({ length: COUNT }, () => ({
+          x:  Math.random() * W,
+          y:  Math.random() * H,
+          vx: (Math.random() - 0.5) * 0.3,
+          vy: (Math.random() - 0.5) * 0.3,
+          r:  Math.random() * 1.4 + 0.5,
+        }));
+      }
+
+      function tick() {
+        ctx.clearRect(0, 0, W, H);
+        // connections
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x;
+            const dy = particles[i].y - particles[j].y;
+            const d  = Math.sqrt(dx * dx + dy * dy);
+            if (d < LINK_DIST) {
+              ctx.beginPath();
+              ctx.strokeStyle = `rgba(45,212,191,${0.15 * (1 - d / LINK_DIST)})`;
+              ctx.lineWidth = 0.7;
+              ctx.moveTo(particles[i].x, particles[i].y);
+              ctx.lineTo(particles[j].x, particles[j].y);
+              ctx.stroke();
+            }
+          }
+        }
+        // dots
+        particles.forEach(p => {
+          p.x += p.vx; p.y += p.vy;
+          if (p.x < 0 || p.x > W) p.vx *= -1;
+          if (p.y < 0 || p.y > H) p.vy *= -1;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(45,212,191,0.45)';
+          ctx.fill();
+        });
+        requestAnimationFrame(tick);
+      }
+
+      window.addEventListener('resize', () => { resize(); init(); });
+      resize(); init(); tick();
+    })();
+
+    // ─── COUNTER ANIMATION ───
+    (function () {
+      if (prefersReducedMotion) return;
+      const strongs = document.querySelectorAll('.hero-stat strong');
+      const configs = [
+        { from: 0,  to: 20,   fmt: n => Math.round(n) + '+' },
+        { from: 30, to: 15,   fmt: n => '<' + Math.round(n) + 'm' },
+        { from: 90, to: 99.9, fmt: n => n.toFixed(1) + '%' },
+      ];
+
+      function animateVal(el, cfg, duration) {
+        const start = performance.now();
+        const tick = now => {
+          const t = Math.min((now - start) / duration, 1);
+          const e = 1 - Math.pow(1 - t, 3);
+          el.textContent = cfg.fmt(cfg.from + (cfg.to - cfg.from) * e);
+          if (t < 1) requestAnimationFrame(tick);
+          else el.textContent = cfg.fmt(cfg.to);
+        };
+        requestAnimationFrame(tick);
+      }
+
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          strongs.forEach((el, i) => { if (configs[i]) animateVal(el, configs[i], 1400); });
+          observer.disconnect();
+        });
+      }, { threshold: 0.6 });
+
+      const statsEl = document.querySelector('.hero-stats');
+      if (statsEl) observer.observe(statsEl);
+    })();
+
     const fadeItems = document.querySelectorAll('.fade-in');
 
     if (prefersReducedMotion) {
@@ -994,6 +1267,46 @@
       });
 
       fadeItems.forEach((el) => observer.observe(el));
+    }
+
+    // ─── STACK TABS ───
+    (function () {
+      const tabs     = document.querySelectorAll('.stack-tab');
+      const contents = document.querySelectorAll('.stack-content');
+
+      function activateTab(cat) {
+        tabs.forEach(t => t.classList.toggle('active', t.dataset.cat === cat));
+        contents.forEach(c => {
+          const isActive = c.dataset.cat === cat;
+          c.classList.toggle('active', isActive);
+          if (isActive) {
+            c.querySelectorAll('.stack-pill').forEach((pill, i) => {
+              pill.style.animation = 'none';
+              void pill.offsetHeight;
+              pill.style.animation = '';
+              pill.style.animationDelay = `${i * 45}ms`;
+            });
+          }
+        });
+      }
+
+      // initial stagger on cloud tab
+      document.querySelectorAll('.stack-content.active .stack-pill').forEach((p, i) => {
+        p.style.animationDelay = `${i * 45}ms`;
+      });
+
+      tabs.forEach(tab => tab.addEventListener('click', () => activateTab(tab.dataset.cat)));
+    })();
+
+    // ─── CARD SPOTLIGHT ───
+    if (!prefersReducedMotion) {
+      document.querySelectorAll('.project-card').forEach(card => {
+        card.addEventListener('mousemove', e => {
+          const r = card.getBoundingClientRect();
+          card.style.setProperty('--mx', `${e.clientX - r.left}px`);
+          card.style.setProperty('--my', `${e.clientY - r.top}px`);
+        });
+      });
     }
 
     const sections = document.querySelectorAll('section[id]');
