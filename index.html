@@ -1335,6 +1335,12 @@
 
     window.addEventListener('scroll', setActiveLink, { passive: true });
     window.addEventListener('load', setActiveLink);
+
+    // Scroll to bottom when clicking Contact
+    document.querySelector('.nav-links a[href="#contact"]').addEventListener('click', function (e) {
+      e.preventDefault();
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    });
   </script>
 
 </body>
