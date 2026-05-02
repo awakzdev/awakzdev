@@ -68,6 +68,17 @@
       opacity: 0.9;
     }
 
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.045;
+      mix-blend-mode: overlay;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    }
+
     nav, main, footer {
       position: relative;
       z-index: 1;
@@ -157,6 +168,19 @@
       grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
       gap: 2.5rem;
       align-items: center;
+      position: relative;
+    }
+
+    .hero-grid::before {
+      content: '';
+      position: absolute;
+      inset: 92px -40px auto auto;
+      width: min(520px, 48vw);
+      height: min(520px, 48vw);
+      background: radial-gradient(circle, rgba(45, 212, 191, 0.13), rgba(56, 189, 248, 0.06) 42%, transparent 68%);
+      filter: blur(10px);
+      pointer-events: none;
+      z-index: -1;
     }
 
     .hero-main {
@@ -217,14 +241,6 @@
     .hero-summary strong {
       color: var(--text-primary);
       font-weight: 600;
-    }
-
-    .hero-note {
-      max-width: 620px;
-      font-size: 0.98rem;
-      line-height: 1.7;
-      color: var(--text-primary);
-      margin-bottom: 2.25rem;
     }
 
     .cert-badges {
@@ -464,8 +480,66 @@
     /* ─── DIVIDER ─── */
     .divider {
       height: 1px;
-      background: var(--border);
+      background: linear-gradient(90deg, transparent, var(--border) 22%, var(--border) 78%, transparent);
       margin: 0;
+    }
+
+    /* ─── FOCUS ─── */
+    #focus {
+      padding: 4.5rem 0 4rem;
+    }
+
+    .focus-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.9rem;
+      max-width: 1036px;
+    }
+
+    .focus-card {
+      position: relative;
+      min-height: 178px;
+      padding: 1.55rem 1.55rem 1.55rem 1.75rem;
+      border: 1px solid rgba(148, 163, 184, 0.1);
+      border-left: 3px solid rgba(45, 212, 191, 0.58);
+      border-radius: 6px 18px 18px 6px;
+      background:
+        linear-gradient(90deg, rgba(45, 212, 191, 0.075), transparent 34%),
+        rgba(9, 13, 22, 0.36);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.025);
+      transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .focus-card:hover {
+      transform: translateX(3px);
+      border-color: rgba(45, 212, 191, 0.28);
+      border-left-color: var(--accent);
+      background:
+        linear-gradient(90deg, rgba(45, 212, 191, 0.11), transparent 38%),
+        rgba(15, 23, 42, 0.48);
+    }
+
+    .focus-kicker {
+      display: block;
+      margin-bottom: 0.85rem;
+      color: var(--accent);
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .focus-card h3 {
+      margin-bottom: 0.55rem;
+      color: var(--text-primary);
+      font-size: 1.08rem;
+      letter-spacing: -0.025em;
+    }
+
+    .focus-card p {
+      color: var(--text-secondary);
+      font-size: 0.88rem;
+      line-height: 1.7;
     }
 
     /* ─── PROJECTS ─── */
@@ -749,6 +823,12 @@
     }
 
     /* ─── RESPONSIVE ─── */
+    @media (max-width: 1024px) {
+      .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
     @media (max-width: 768px) {
       nav {
         padding: 0.85rem 1.25rem;
@@ -771,6 +851,12 @@
       .projects-grid {
         grid-template-columns: 1fr;
       }
+
+      .focus-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+      }
+
 
       .hero-grid {
         grid-template-columns: 1fr;
@@ -897,9 +983,9 @@
 
     .hero-eyebrow { animation: fade-right 0.6s ease both 0.15s; }
     .hero-title   { animation: fade-up 0.7s ease both 0.45s; }
-    .hero-summary { animation: fade-up 0.7s ease both 0.6s; }
-    .cert-badges  { animation: fade-up 0.7s ease both 0.72s; }
-    .hero-actions { animation: fade-up 0.7s ease both 0.86s; }
+    .hero-summary     { animation: fade-up 0.7s ease both 0.6s; }
+    .cert-badges      { animation: fade-up 0.7s ease both 0.72s; }
+    .hero-actions     { animation: fade-up 0.7s ease both 0.84s; }
     .hero-panel   { animation: fade-up 0.9s ease both 0.5s, float-panel 7s ease-in-out 1.8s infinite; }
 
     .hero-title::after {
@@ -967,6 +1053,7 @@
     <div class="nav-logo">EC<span>.</span></div>
     <ul class="nav-links">
       <li><a href="#hero">Home</a></li>
+      <li><a href="#focus">Focus</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -978,16 +1065,14 @@
     <section id="hero">
       <div class="hero-grid">
         <div class="hero-main">
-          <div class="hero-eyebrow">Available for contract</div>
+          <div class="hero-eyebrow">Open to select consulting</div>
           <h1 class="hero-name">Eliazar C.</h1>
           <p class="hero-title">Senior DevSecOps Engineer &amp; Cloud Architect</p>
           <p class="hero-summary">
             Senior DevOps Architect working across <strong>AWS</strong>, <strong>GCP</strong>, and <strong>Azure</strong>.
-            Over the last <strong>~3.5 years</strong>, I’ve designed <strong>20+ production landing zones</strong>,
-            pushed release cycles to <strong>under 15 minutes</strong>, and cut roughly <strong>$18K/year</strong>
-            in tooling costs.
+            Over the last <strong>~3.5 years</strong>, I’ve designed <strong>20+ production landing zones</strong>
+            and cut roughly <strong>$18K/year</strong> in tooling costs.
           </p>
-
 
           <div class="cert-badges">
             <span class="cert-badge">
@@ -1035,8 +1120,8 @@
                 <span>landing zones built</span>
               </div>
               <div class="hero-stat">
-                <strong>&lt;15m</strong>
-                <span>release cycles</span>
+                <strong>50%</strong>
+                <span>CI/CD time reduction</span>
               </div>
               <div class="hero-stat">
                 <strong>99.9%</strong>
@@ -1108,6 +1193,40 @@
             </div>
           </div>
         </aside>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- FOCUS -->
+    <section id="focus">
+      <div class="fade-in">
+        <p class="section-label">Focus</p>
+        <h2 class="section-title">Cloud platforms built for production.</h2>
+        <p class="section-subtitle">I design cloud platforms that are secure by default, observable in production, and simple for teams to operate.</p>
+      </div>
+
+      <div class="focus-grid">
+        <article class="focus-card fade-in">
+          <span class="focus-kicker">Cloud foundations</span>
+          <h3>Cloud foundations at scale</h3>
+          <p>Multi-account and multi-project foundations, IAM guardrails, network segmentation, DNS, security baselines, and cost-aware defaults.</p>
+        </article>
+        <article class="focus-card fade-in">
+          <span class="focus-kicker">Platform engineering</span>
+          <h3>Kubernetes &amp; delivery platforms</h3>
+          <p>Kubernetes platforms across cloud providers, with GitOps, observability, autoscaling, and reliable operating patterns.</p>
+        </article>
+        <article class="focus-card fade-in">
+          <span class="focus-kicker">Secure delivery</span>
+          <h3>Secured CI/CD pipelines</h3>
+          <p>CI/CD pipelines with security checks built in, vulnerability scanning, and automated delivery workflows across cloud and application environments.</p>
+        </article>
+        <article class="focus-card fade-in">
+          <span class="focus-kicker">Infrastructure as Code</span>
+          <h3>Infrastructure as Code &amp; cloud automation</h3>
+          <p>Terraform, Terragrunt, CloudFormation, and cloud-native automation patterns for repeatable environments, GitOps workflows, and scalable infrastructure changes.</p>
+        </article>
       </div>
     </section>
 
@@ -1312,24 +1431,24 @@
           <div class="contact-main">
             <div class="contact-status">
               <span class="status-dot"></span>
-              Available for contract
+              Open to select consulting
             </div>
             <h2 class="contact-title">Let&apos;s build something solid.</h2>
-            <p class="contact-sub">Open to cloud infrastructure, DevSecOps, and platform engineering work across AWS, GCP, and Azure.</p>
+            <p class="contact-sub">Open to consulting, advisory, and platform engineering conversations across AWS, GCP, and Azure.</p>
 
             <div class="contact-meta">
               <span>AWS / GCP / Azure</span>
               <span>Platform engineering</span>
               <span>DevSecOps</span>
-              <span>Israel · global contracts</span>
+              <span>Israel · remote-friendly</span>
             </div>
 
             <div class="contact-actions">
-              <a href="https://www.linkedin.com/in/ellie-chodjayev/" target="_blank" rel="noopener" class="btn btn-outline">
+              <a href="https://www.linkedin.com/in/ellie-chodjayev/" target="_blank" rel="noopener" class="btn btn-primary">
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true" focusable="false" style="display:inline-block;vertical-align:middle">
                   <path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 01107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/>
                 </svg>
-                LinkedIn
+                Contact on LinkedIn
               </a>
               <a href="https://github.com/awakzdev" target="_blank" rel="noopener" class="btn btn-outline">
                 <!-- GitHub inline SVG (replaces data-lucide="github") -->
@@ -1352,7 +1471,7 @@
     </div>
     <p class="footer-availability">
       <span class="status-dot"></span>
-      Open to global contracts
+      Open to select consulting
     </p>
   </footer>
 
@@ -1432,7 +1551,7 @@
       const strongs = document.querySelectorAll('.hero-stat strong');
       const configs = [
         { from: 0,  to: 20,   fmt: n => Math.round(n) + '+' },
-        { from: 30, to: 15,   fmt: n => '<' + Math.round(n) + 'm' },
+        { from: 0,  to: 50,   fmt: n => Math.round(n) + '%' },
         { from: 90, to: 99.9, fmt: n => n.toFixed(1) + '%' },
       ];
 
