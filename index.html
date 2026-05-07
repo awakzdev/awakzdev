@@ -1396,6 +1396,45 @@
     }
 
     .f-status { display: flex; align-items: center; gap: 0.4rem; }
+    .term-footer-c { justify-content: center; text-align: center; }
+
+    .stats > .stat,
+    .snapshot-v2 > .snap-card,
+    .proj-list > .proj {
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    section.ai.out-ready .stats > .stat,
+    section.ai.out-ready .snapshot-v2 > .snap-card,
+    section.ai.out-ready .proj-list > .proj {
+      opacity: 1;
+      transform: none;
+    }
+    .stats > .stat:nth-child(1),
+    .snapshot-v2 > .snap-card:nth-child(1),
+    .proj-list > .proj:nth-child(1) { transition-delay: 0.05s; }
+    .stats > .stat:nth-child(2),
+    .snapshot-v2 > .snap-card:nth-child(2),
+    .proj-list > .proj:nth-child(2) { transition-delay: 0.18s; }
+    .stats > .stat:nth-child(3),
+    .snapshot-v2 > .snap-card:nth-child(3),
+    .proj-list > .proj:nth-child(3) { transition-delay: 0.31s; }
+    .stats > .stat:nth-child(4),
+    .snapshot-v2 > .snap-card:nth-child(4),
+    .proj-list > .proj:nth-child(4) { transition-delay: 0.44s; }
+    .proj-list > .proj:nth-child(1) { transition-delay: 0.05s; }
+    .proj-list > .proj:nth-child(2) { transition-delay: 0.32s; }
+    .proj-list > .proj:nth-child(3) { transition-delay: 0.59s; }
+    .proj-list > .proj:nth-child(4) { transition-delay: 0.86s; }
+    .proj-list > .proj:nth-child(5) { transition-delay: 1.13s; }
+    .proj-list > .proj:nth-child(6) { transition-delay: 1.40s; }
+    .proj-list > .proj:nth-child(7) { transition-delay: 1.67s; }
+    @media (prefers-reduced-motion: reduce) {
+      .stats > .stat,
+      .snapshot-v2 > .snap-card,
+      .proj-list > .proj { opacity: 1; transform: none; transition: none; }
+    }
 
     /* ─── RESPONSIVE ─── */
     @media (max-width: 900px) {
@@ -1996,11 +2035,6 @@
           <span class="cmd">./contact.sh</span>
         </div>
         <div class="out">
-          <div class="ct-status">
-            <span class="dot"></span>
-            <span style="color:var(--prompt);font-weight:600;">STATUS</span>
-            <span style="color:var(--muted)">open — Professional conversations welcome</span>
-          </div>
           <p class="ct-headline">"Let's build something solid."</p>
           <p class="ct-sub">Happy to discuss platform engineering, cloud architecture, and DevSecOps problems across AWS, GCP, and Azure.</p>
           <div class="ct-meta">
@@ -2031,12 +2065,8 @@
     </main>
   </div>
 
-  <footer class="term-footer">
+  <footer class="term-footer term-footer-c">
     <span>Eliazar Chodjayev · Senior Platform Engineer / DevSecOps Architect</span>
-    <span class="f-status">
-      <span class="dot" style="width:6px;height:6px;"></span>
-      Professional conversations welcome
-    </span>
   </footer>
 
   <script>
@@ -2068,7 +2098,7 @@
       });
     }
 
-    const heroIntroDone = (async function() {
+    window.heroIntroDone = (async function() {
       const typed = document.querySelectorAll('.typewrite');
       if (noMotion) {
         typed.forEach(el => el.classList.add('done'));
@@ -2146,7 +2176,7 @@
         return;
       }
 
-      await heroIntroDone;
+      await window.heroIntroDone;
       await wait(220);
 
       for (const section of sections) {
@@ -2166,7 +2196,19 @@
           await typeText(el, Number(el.dataset.typeSpeed || 10));
         }
 
-        await wait(260);
+        const staggerKids = section.querySelectorAll(
+          ':scope .stats > .stat, :scope .snapshot-v2 > .snap-card, :scope .proj-list > .proj'
+        );
+        if (staggerKids.length) {
+          const last = staggerKids[staggerKids.length - 1];
+          const cs = getComputedStyle(last);
+          const parseMs = v => (parseFloat(v) || 0) * (v.includes('ms') ? 1 : 1000);
+          const delay = parseMs(cs.transitionDelay.split(',')[0] || '0s');
+          const dur   = parseMs(cs.transitionDuration.split(',')[0] || '0s');
+          await wait(delay + dur + 120);
+        } else {
+          await wait(260);
+        }
       }
     })();
 
@@ -2278,7 +2320,12 @@
       }
 
       render();
-      setTimeout(next, 600);
+      const start = () => setTimeout(next, 400);
+      if (window.heroIntroDone && typeof window.heroIntroDone.then === 'function') {
+        window.heroIntroDone.then(start);
+      } else {
+        setTimeout(start, 600);
+      }
     })();
   </script>
 
