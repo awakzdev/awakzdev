@@ -1400,16 +1400,34 @@
 
     .stats > .stat,
     .snapshot-v2 > .snap-card,
-    .proj-list > .proj {
+    .proj-list > .proj,
+    #contact .ct-headline,
+    #contact .ct-sub,
+    #contact .ct-meta,
+    #contact .ct-btns {
       opacity: 0;
       transform: translateY(8px);
       transition: opacity 0.5s ease, transform 0.5s ease;
     }
     section.ai.out-ready .stats > .stat,
     section.ai.out-ready .snapshot-v2 > .snap-card,
-    section.ai.out-ready .proj-list > .proj {
+    section.ai.out-ready .proj-list > .proj,
+    section.ai.out-ready#contact .ct-headline,
+    section.ai.out-ready#contact .ct-sub,
+    section.ai.out-ready#contact .ct-meta,
+    section.ai.out-ready#contact .ct-btns {
       opacity: 1;
       transform: none;
+    }
+    #contact .ct-headline { transition-delay: 0.10s; }
+    #contact .ct-sub      { transition-delay: 0.50s; }
+    #contact .ct-meta     { transition-delay: 0.90s; }
+    #contact .ct-btns     { transition-delay: 1.30s; }
+    @media (prefers-reduced-motion: reduce) {
+      #contact .ct-headline,
+      #contact .ct-sub,
+      #contact .ct-meta,
+      #contact .ct-btns { opacity: 1; transform: none; transition: none; }
     }
     .stats > .stat:nth-child(1),
     .snapshot-v2 > .snap-card:nth-child(1),
@@ -2197,7 +2215,7 @@
         }
 
         const staggerKids = section.querySelectorAll(
-          ':scope .stats > .stat, :scope .snapshot-v2 > .snap-card, :scope .proj-list > .proj'
+          ':scope .stats > .stat, :scope .snapshot-v2 > .snap-card, :scope .proj-list > .proj, :scope .ct-headline, :scope .ct-sub, :scope .ct-meta, :scope .ct-btns'
         );
         if (staggerKids.length) {
           const last = staggerKids[staggerKids.length - 1];
