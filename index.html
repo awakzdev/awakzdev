@@ -575,6 +575,28 @@
       text-align: right;
       font-variant-numeric: tabular-nums;
     }
+    .skill-tags {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 0.4rem 0.45rem;
+    }
+    .sk-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.28rem 0.55rem;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(63,185,80,0.06);
+      color: var(--cmd);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.66rem;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+    .sk-tag:hover {
+      border-color: rgba(63,185,80,0.55);
+      background: rgba(63,185,80,0.12);
+    }
 
     .arch-card {
       border: 1px solid var(--border);
@@ -1614,44 +1636,19 @@
               <div class="skill-head">
                 <span class="tl tl-r"></span><span class="tl tl-y"></span><span class="tl tl-g"></span>
                 <span class="skill-title">~/skills.txt</span>
-                <span class="skill-meta">12y exp</span>
+                <span class="skill-meta">3.5y exp</span>
               </div>
-              <div class="skill-body">
-                <div class="skill-row" data-pct="95">
-                  <span class="sk-name">Kubernetes</span>
-                  <span class="sk-bar"><span class="sk-fill"></span></span>
-                  <span class="sk-pct">95%</span>
-                </div>
-                <div class="skill-row" data-pct="92">
-                  <span class="sk-name">Terraform / IaC</span>
-                  <span class="sk-bar"><span class="sk-fill"></span></span>
-                  <span class="sk-pct">92%</span>
-                </div>
-                <div class="skill-row" data-pct="90">
-                  <span class="sk-name">AWS</span>
-                  <span class="sk-bar"><span class="sk-fill"></span></span>
-                  <span class="sk-pct">90%</span>
-                </div>
-                <div class="skill-row" data-pct="85">
-                  <span class="sk-name">CI/CD · GitOps</span>
-                  <span class="sk-bar"><span class="sk-fill"></span></span>
-                  <span class="sk-pct">85%</span>
-                </div>
-                <div class="skill-row" data-pct="80">
-                  <span class="sk-name">GCP</span>
-                  <span class="sk-bar"><span class="sk-fill"></span></span>
-                  <span class="sk-pct">80%</span>
-                </div>
-                <div class="skill-row" data-pct="75">
-                  <span class="sk-name">Azure</span>
-                  <span class="sk-bar"><span class="sk-fill"></span></span>
-                  <span class="sk-pct">75%</span>
-                </div>
-                <div class="skill-row" data-pct="82">
-                  <span class="sk-name">DevSecOps</span>
-                  <span class="sk-bar"><span class="sk-fill"></span></span>
-                  <span class="sk-pct">82%</span>
-                </div>
+              <div class="skill-body skill-tags">
+                <span class="sk-tag">Kubernetes</span>
+                <span class="sk-tag">Terraform / IaC</span>
+                <span class="sk-tag">AWS</span>
+                <span class="sk-tag">GCP</span>
+                <span class="sk-tag">Azure</span>
+                <span class="sk-tag">CI/CD · GitOps</span>
+                <span class="sk-tag">DevSecOps</span>
+                <span class="sk-tag">Helm · ArgoCD</span>
+                <span class="sk-tag">Prometheus · Grafana</span>
+                <span class="sk-tag">Python · Bash</span>
               </div>
               <p class="ascii-caption">Hands-on across cloud, IaC, and secure delivery — built and shipped in production.</p>
             </aside>
@@ -1780,7 +1777,7 @@
               <span class="sl">production uptime</span>
             </div>
             <div class="stat">
-              <span class="sv">~$18K</span>
+              <span class="sv">~$45K</span>
               <svg class="spark spark-bars spark-down" viewBox="0 0 70 22" aria-hidden="true">
                 <g class="spk-bars" fill="currentColor">
                   <rect x="0"  y="0"  width="6" height="22"></rect>
@@ -1811,7 +1808,7 @@
           <p class="typewrite" data-type-speed="8">I design secure, production-ready cloud platforms across <strong>AWS</strong>, <strong>GCP</strong>, and <strong>Azure</strong> —</p>
           <p class="typewrite" data-type-speed="8">combining <strong>Kubernetes</strong>, <strong>Terraform</strong>, and <strong>DevSecOps</strong>. Over <strong>~3.5 years</strong>,</p>
           <p class="typewrite" data-type-speed="8">I've built <strong>20+ landing zones</strong>, cut PR-to-prod cycles by <strong>50%+</strong>,</p>
-          <p class="typewrite" data-type-speed="8">and reduced tooling spend by roughly <strong>$18K/year</strong>.</p>
+          <p class="typewrite" data-type-speed="8">and cut cloud + tooling spend by roughly <strong>$45K/year</strong>.</p>
         </div>
       </section>
 
