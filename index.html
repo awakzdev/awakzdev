@@ -1347,7 +1347,10 @@
       display: flex;
       align-items: center;
       gap: 0.55rem;
+      opacity: 0;
+      transition: opacity 0.3s ease;
     }
+    .final-line.ready { opacity: 1; }
 
     .cur {
       display: inline-block;
@@ -1543,7 +1546,7 @@
             <div class="hero-copy">
               <p class="hero-name typewrite" data-type-speed="28">Eliazar Chodjayev</p>
               <p class="hero-role typewrite" data-type-speed="16"># Platform Engineer &amp; DevSecOps Architect</p>
-              <p class="hero-loc typewrite" data-type-speed="12">Cloud platforms  · DevSecOps · Israel</p>
+              <p class="hero-loc typewrite" data-type-speed="12">Cloud platforms · Israel</p>
               <div class="certs type-reveal cert-group">
                 <span class="cert">CKA</span>
                 <span class="cert">AWS Solutions Architect</span>
@@ -2082,7 +2085,7 @@
   </div>
 
   <footer class="term-footer term-footer-c">
-    <span>Eliazar Chodjayev · Platform Engineer / DevSecOps Architect</span>
+    <span>Eliazar Chodjayev · © 2026</span>
   </footer>
 
   <script>
@@ -2189,6 +2192,7 @@
         });
         document.querySelectorAll('.typewrite').forEach(el => el.classList.add('done'));
         document.querySelectorAll('.type-reveal, .cert').forEach(el => el.classList.add('done'));
+        document.querySelector('.final-line')?.classList.add('ready');
         return;
       }
 
@@ -2226,6 +2230,8 @@
           await wait(260);
         }
       }
+
+      document.querySelector('.final-line')?.classList.add('ready');
     })();
 
     // ─── ACTIVE NAV ───
