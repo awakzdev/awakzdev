@@ -11,7 +11,7 @@
 
 ###
 
-<div align="center">I'm Eliazar — Yogi, full-time DevOps / Cloud Architect, and open to select consulting conversations 🧘👨‍💻 🚀</div>
+<div align="center">I'm Eliazar — Yogi, full-time DevOps / Cloud Architect 🧘👨‍💻 🚀</div>
 <br>
 
 ###
