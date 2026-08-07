@@ -15,7 +15,7 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg:        #0d1117;
+      --bg:        #04060a;
       --win-bg:    #161b22;
       --chrome-bg: #1c2128;
       --border:    #30363d;
@@ -52,22 +52,24 @@
     ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
 
     /* ─── TERMINAL WINDOW ─── */
+    /* NB: no `overflow: hidden` here — it would break `position: sticky`
+       on .chrome. Corners are rounded on the children instead. */
     .term-wrap {
-      max-width: 1120px;
+      width: min(1340px, 100% - 4rem);
       margin: 2.5rem auto;
       border: 1px solid var(--border);
       border-radius: 10px;
-      overflow: hidden;
       box-shadow:
-        0 0 0 1px rgba(255,255,255,0.03),
-        0 32px 80px rgba(0,0,0,0.65),
-        0 8px 24px rgba(0,0,0,0.4);
+        0 0 0 1px rgba(255,255,255,0.06),
+        0 40px 100px rgba(0,0,0,0.8),
+        0 0 120px -40px rgba(63,185,80,0.18);
     }
 
     /* ─── WINDOW CHROME ─── */
     .chrome {
       background: var(--chrome-bg);
       border-bottom: 1px solid var(--border);
+      border-radius: 10px 10px 0 0;
       height: 44px;
       display: flex;
       align-items: center;
@@ -119,8 +121,12 @@
     /* ─── TERMINAL BODY ─── */
     .term-body {
       background: var(--win-bg);
+      border-radius: 0 0 10px 10px;
       padding: 2rem 3.25rem 3.75rem;
     }
+
+    /* Monospace at 15.5px runs ~105ch across the full window — cap the prose. */
+    .term-body p.typewrite { max-width: 78ch; }
 
     /* ─── PROMPT ─── */
     .pline {
@@ -690,11 +696,10 @@
     }
     .ach-k { color: var(--cmd); font-weight: 500; }
 
-    .snapshot-v2 {
-      grid-template-columns: 1fr;
-      gap: 0.7rem;
-      max-width: 880px;
-    }
+    /* .snapshot-v2 previously declared grid-template-columns/gap/max-width
+       here, but `.snapshot` re-declares all three later at equal specificity
+       and won on source order. The class is kept on the element purely as a
+       hook for the stagger rules and the reveal script. */
     .snap-card.sv2 {
       display: grid;
       grid-template-columns: 44px 1fr;
@@ -931,28 +936,35 @@
       );
       pointer-events: none;
     }
+    /* Sweep moves via background-position (paint only). Animating `left`
+       forced a layout pass every frame on all four dividers. The glow is
+       baked into the gradient falloff so no box-shadow/filter is needed. */
     section.ai + section.ai::after {
       content: '';
       position: absolute;
       top: -0.5px;
+      left: 0;
+      right: 0;
       height: 2px;
-      width: 110px;
       background: linear-gradient(
         90deg,
         transparent 0%,
+        rgba(63,185,80,0.35) 34%,
         var(--prompt) 50%,
+        rgba(63,185,80,0.35) 66%,
         transparent 100%
-      );
-      box-shadow: 0 0 10px rgba(63,185,80,0.85);
+      ) no-repeat;
+      background-size: 160px 100%;
+      background-position: -160px 0;
       border-radius: 2px;
       animation: sdiv-sweep 6s ease-in-out infinite;
       pointer-events: none;
     }
     @keyframes sdiv-sweep {
-      0%   { left: -110px; opacity: 0; }
+      0%   { background-position: -160px 0; opacity: 0; }
       8%   { opacity: 1; }
       92%  { opacity: 1; }
-      100% { left: 100%; opacity: 0; }
+      100% { background-position: calc(100% + 160px) 0; opacity: 0; }
     }
     @media (prefers-reduced-motion: reduce) {
       section.ai + section.ai::after { animation: none; opacity: 0; }
@@ -964,7 +976,7 @@
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 1.05rem;
-      max-width: 820px;
+      max-width: 980px;
     }
 
     .snap-card {
@@ -1408,7 +1420,7 @@
 
     /* ─── FOOTER ─── */
     .term-footer {
-      max-width: 1000px;
+      width: min(1340px, 100% - 4rem);
       margin: 0 auto 2.5rem;
       padding: 1rem 1.25rem 0;
       display: flex;
@@ -1486,8 +1498,10 @@
       .snapshot { grid-template-columns: 1fr; }
     }
     @media (max-width: 768px) {
-      .term-wrap { margin: 0; border-radius: 0; border-left: none; border-right: none; }
+      .term-wrap { width: 100%; margin: 0; border-radius: 0; border-left: none; border-right: none; }
+      .chrome, .term-body { border-radius: 0; }
       .term-body { padding: 1.25rem 1.5rem 3rem; }
+      .term-footer { width: 100%; padding-left: 1.5rem; padding-right: 1.5rem; }
       .win-title { display: none; }
       .stat { min-width: 90px; }
       .hero-name { font-size: 1.4rem; }
