@@ -3,14 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Eliazar C. — Platform Engineer & DevSecOps Architect</title>
+  <title>Eliazar C. — Platform Engineer &amp; DevSecOps Architect</title>
+  <meta name="description" content="Platform engineer building secure, production-ready cloud platforms across AWS, GCP, and Azure with Kubernetes, Terraform, and DevSecOps." />
+  <link rel="canonical" href="https://eliazar.dev/" />
+  <meta name="theme-color" content="#04060a" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://eliazar.dev/" />
+  <meta property="og:site_name" content="eliazar.dev" />
+  <meta property="og:title" content="Eliazar Chodjayev — Platform Engineer &amp; DevSecOps Architect" />
+  <meta property="og:description" content="Secure, production-ready cloud platforms across AWS, GCP, and Azure — Kubernetes, Terraform, and DevSecOps." />
+  <meta property="og:image" content="https://eliazar.dev/image.png" />
+  <meta property="og:image:width" content="1536" />
+  <meta property="og:image:height" content="1024" />
+  <meta property="og:image:alt" content="Eliazar Chodjayev — Platform Engineer" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Eliazar Chodjayev — Platform Engineer &amp; DevSecOps Architect" />
+  <meta name="twitter:description" content="Secure, production-ready cloud platforms across AWS, GCP, and Azure — Kubernetes, Terraform, and DevSecOps." />
+  <meta name="twitter:image" content="https://eliazar.dev/image.png" />
+
   <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
   <link rel="icon" type="image/svg+xml" href="./favicon.svg?v=3" />
   <link rel="icon" type="image/x-icon" href="./favicon.ico?v=3" sizes="16x16 32x32 48x48" />
   <link rel="shortcut icon" href="./favicon.ico?v=3" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <!-- Only the weights the sheet actually uses. Was requesting 300 and
+       italic-400, neither of which appears anywhere in the CSS. -->
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -149,8 +170,6 @@
 
     .cmd { color: var(--cmd); }
     .cmd-flag { color: var(--orange); }
-    .cmd-str  { color: var(--orange); }
-
     /* ─── OUTPUT ─── */
     .out {
       padding-left: 1.75rem;
@@ -204,35 +223,6 @@
     }
 
     .hero-copy { min-width: 0; }
-
-    .ascii-card {
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      background:
-        radial-gradient(circle at top right, rgba(63,185,80,0.15), transparent 34%),
-        rgba(13,17,23,0.52);
-      padding: 0.65rem 0.9rem;
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02);
-    }
-
-    .ascii-art {
-      color: var(--prompt);
-      font-size: clamp(0.48rem, 0.9vw, 0.63rem);
-      line-height: 1.02;
-      white-space: pre;
-      letter-spacing: -0.06em;
-      text-shadow: 0 0 14px rgba(63,185,80,0.28);
-      overflow: hidden;
-    }
-
-    .ascii-caption {
-      margin-top: 0.5rem;
-      padding-top: 0.45rem;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 0.68rem;
-      line-height: 1.42;
-    }
 
     .termlog-card {
       border: 1px solid var(--border);
@@ -297,404 +287,6 @@
     }
     @keyframes tl-blink { 50% { opacity: 0; } }
 
-    .statgrid-card {
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      background:
-        radial-gradient(circle at top right, rgba(63,185,80,0.10), transparent 40%),
-        rgba(13,17,23,0.72);
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02);
-      overflow: hidden;
-      padding: 0 0.9rem 0.65rem;
-    }
-    .statgrid-head {
-      display: flex;
-      align-items: center;
-      gap: 0.45rem;
-      height: 28px;
-      margin: 0 -0.9rem 0.55rem;
-      padding: 0 0.7rem;
-      background: var(--chrome-bg);
-      border-bottom: 1px solid var(--border);
-    }
-    .statgrid-title {
-      margin-left: 0.4rem;
-      color: var(--muted);
-      font-size: 0.68rem;
-      letter-spacing: 0.02em;
-    }
-    .statgrid-live {
-      margin-left: auto;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-      color: var(--prompt);
-      font-size: 0.62rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-    .sg-dot {
-      width: 6px; height: 6px; border-radius: 50%;
-      background: var(--prompt);
-      box-shadow: 0 0 8px rgba(63,185,80,0.85);
-      animation: tl-pulse 1.4s ease-in-out infinite;
-    }
-    .statgrid-body {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: clamp(0.58rem, 0.78vw, 0.7rem);
-      line-height: 1.5;
-    }
-    .sg-row {
-      display: grid;
-      grid-template-columns: 1.25fr 1fr 0.85fr 0.95fr 0.45fr;
-      gap: 0.5rem;
-      padding: 0.18rem 0;
-      align-items: center;
-    }
-    .sg-row.sg-head {
-      color: var(--comment);
-      font-size: 0.6rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      border-bottom: 1px dashed var(--border);
-      padding-bottom: 0.3rem;
-      margin-bottom: 0.15rem;
-    }
-    .sg-k    { color: var(--cmd); }
-    .sg-mute { color: var(--muted); }
-    .sg-ok   { color: var(--prompt); }
-    .sg-warn { color: var(--yellow); }
-
-    .sg-divider {
-      height: 1px;
-      background: var(--border);
-      margin: 0.5rem 0 0.55rem;
-    }
-    .sg-foot {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-    }
-    .sg-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      padding: 0.15rem 0.5rem;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      background: rgba(13,17,23,0.55);
-      font-size: 0.62rem;
-    }
-    .sg-pl { color: var(--muted); }
-    .sg-pv { font-weight: 600; }
-
-    .pipe-card {
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      background:
-        radial-gradient(circle at top right, rgba(63,185,80,0.10), transparent 40%),
-        rgba(13,17,23,0.72);
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02);
-      overflow: hidden;
-      padding: 0 0.9rem 0.65rem;
-    }
-    .pipe-head {
-      display: flex;
-      align-items: center;
-      gap: 0.45rem;
-      height: 28px;
-      margin: 0 -0.9rem 0.6rem;
-      padding: 0 0.7rem;
-      background: var(--chrome-bg);
-      border-bottom: 1px solid var(--border);
-    }
-    .pipe-title {
-      margin-left: 0.4rem;
-      color: var(--muted);
-      font-size: 0.68rem;
-      letter-spacing: 0.02em;
-    }
-    .pipe-sha {
-      margin-left: auto;
-      color: var(--comment);
-      font-size: 0.6rem;
-      letter-spacing: 0.06em;
-    }
-    .pipe-body {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: clamp(0.6rem, 0.8vw, 0.72rem);
-    }
-    .pipe-flow {
-      list-style: none;
-      margin: 0;
-      padding: 0 0 0 0.2rem;
-      position: relative;
-    }
-    .pipe-flow::before {
-      content: '';
-      position: absolute;
-      left: 0.55rem;
-      top: 0.45rem;
-      bottom: 0.45rem;
-      width: 1px;
-      background: linear-gradient(
-        to bottom,
-        rgba(63,185,80,0.85) 0%,
-        rgba(63,185,80,0.85) 60%,
-        rgba(110,118,129,0.55) 60%,
-        rgba(110,118,129,0.55) 100%
-      );
-    }
-    .pipe-step {
-      display: grid;
-      grid-template-columns: 1.1rem 4.2rem 1fr;
-      align-items: center;
-      gap: 0.45rem;
-      padding: 0.22rem 0;
-      position: relative;
-    }
-    .pipe-dot {
-      color: var(--comment);
-      font-size: 0.85rem;
-      line-height: 1;
-      z-index: 1;
-      background: var(--bg);
-      width: 1.1rem;
-      text-align: center;
-    }
-    .pipe-step.is-done .pipe-dot {
-      color: var(--prompt);
-      text-shadow: 0 0 8px rgba(63,185,80,0.55);
-    }
-    .pipe-step.is-active .pipe-dot {
-      color: var(--prompt);
-      animation: tl-blink 1s steps(1) infinite;
-      text-shadow: 0 0 10px rgba(63,185,80,0.8);
-    }
-    .pipe-name {
-      color: var(--cmd);
-      font-weight: 600;
-      letter-spacing: 0.02em;
-    }
-    .pipe-step.is-active .pipe-name { color: var(--prompt); }
-    .pipe-step:not(.is-done):not(.is-active) .pipe-name { color: var(--muted); }
-    .pipe-meta {
-      color: var(--muted);
-      font-size: 0.66rem;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .pipe-foot {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.3rem;
-      margin-top: 0.55rem;
-      padding-top: 0.5rem;
-      border-top: 1px dashed var(--border);
-    }
-    .pipe-tag {
-      font-size: 0.6rem;
-      letter-spacing: 0.05em;
-      color: var(--prompt);
-      border: 1px solid rgba(63,185,80,0.4);
-      border-radius: 4px;
-      padding: 0.08rem 0.4rem;
-      background: rgba(63,185,80,0.06);
-    }
-
-    .skill-card {
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      background:
-        radial-gradient(circle at top right, rgba(63,185,80,0.10), transparent 40%),
-        rgba(13,17,23,0.72);
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02);
-      overflow: hidden;
-      padding: 0 0.9rem 0.65rem;
-    }
-    .skill-head {
-      display: flex;
-      align-items: center;
-      gap: 0.45rem;
-      height: 28px;
-      margin: 0 -0.9rem 0.55rem;
-      padding: 0 0.7rem;
-      background: var(--chrome-bg);
-      border-bottom: 1px solid var(--border);
-    }
-    .skill-title {
-      margin-left: 0.4rem;
-      color: var(--muted);
-      font-size: 0.68rem;
-      letter-spacing: 0.02em;
-    }
-    .skill-meta {
-      margin-left: auto;
-      color: var(--comment);
-      font-size: 0.6rem;
-      letter-spacing: 0.06em;
-    }
-    .skill-body {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: clamp(0.6rem, 0.78vw, 0.7rem);
-      display: flex;
-      flex-direction: column;
-      gap: 0.35rem;
-    }
-    .skill-row {
-      display: grid;
-      grid-template-columns: 6.4rem 1fr 2.1rem;
-      align-items: center;
-      gap: 0.55rem;
-    }
-    .sk-name {
-      color: var(--cmd);
-      font-weight: 500;
-      white-space: nowrap;
-    }
-    .sk-bar {
-      position: relative;
-      height: 8px;
-      background: rgba(110,118,129,0.18);
-      border: 1px solid var(--border);
-      border-radius: 2px;
-      overflow: hidden;
-      font-family: 'JetBrains Mono', monospace;
-    }
-    .sk-fill {
-      display: block;
-      height: 100%;
-      width: 0;
-      background: linear-gradient(
-        90deg,
-        rgba(63,185,80,0.85) 0%,
-        rgba(63,185,80,1) 100%
-      );
-      box-shadow: 0 0 8px rgba(63,185,80,0.4);
-      transition: width 1.4s cubic-bezier(.2,.7,.2,1);
-    }
-    .skill-row.is-on .sk-fill { width: var(--w, 0%); }
-    .sk-pct {
-      color: var(--prompt);
-      font-size: 0.66rem;
-      text-align: right;
-      font-variant-numeric: tabular-nums;
-    }
-    .skill-tags {
-      flex-direction: row;
-      flex-wrap: wrap;
-      gap: 0.4rem 0.45rem;
-    }
-    .sk-tag {
-      display: inline-flex;
-      align-items: center;
-      padding: 0.28rem 0.55rem;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      background: rgba(63,185,80,0.06);
-      color: var(--cmd);
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.66rem;
-      letter-spacing: 0.02em;
-      white-space: nowrap;
-    }
-    .sk-tag:hover {
-      border-color: rgba(63,185,80,0.55);
-      background: rgba(63,185,80,0.12);
-    }
-
-    .arch-card {
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      background:
-        radial-gradient(circle at top right, rgba(63,185,80,0.10), transparent 40%),
-        rgba(13,17,23,0.72);
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.02);
-      overflow: hidden;
-      padding: 0 0.9rem 0.65rem;
-    }
-    .arch-head {
-      display: flex;
-      align-items: center;
-      gap: 0.45rem;
-      height: 28px;
-      margin: 0 -0.9rem 0.5rem;
-      padding: 0 0.7rem;
-      background: var(--chrome-bg);
-      border-bottom: 1px solid var(--border);
-    }
-    .arch-title {
-      margin-left: 0.4rem;
-      color: var(--muted);
-      font-size: 0.68rem;
-      letter-spacing: 0.02em;
-    }
-    .arch-svg {
-      display: block;
-      width: 100%;
-      height: auto;
-      font-family: 'JetBrains Mono', monospace;
-    }
-    .arch-t1 {
-      fill: var(--cmd);
-      font-size: 9px;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-    }
-    .arch-t2 {
-      fill: var(--prompt);
-      font-size: 8px;
-      letter-spacing: 0.06em;
-    }
-    .arch-t3 {
-      fill: var(--muted);
-      font-size: 7.5px;
-      letter-spacing: 0.04em;
-    }
-
-    .about-lede {
-      font-size: 1.05rem;
-      line-height: 1.55;
-      color: var(--text);
-      max-width: 720px;
-      margin-bottom: 0.85rem;
-    }
-    .about-lede strong {
-      color: var(--prompt);
-      font-weight: 600;
-    }
-    .about-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.45rem;
-      margin-top: 0.4rem;
-    }
-    .about-chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      padding: 0.25rem 0.7rem;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      background: rgba(13,17,23,0.55);
-      font-size: 0.74rem;
-      letter-spacing: 0.02em;
-      color: var(--text);
-      transition: border-color 0.15s, background 0.15s, transform 0.15s;
-    }
-    .about-chip::before {
-      content: '';
-      width: 6px; height: 6px; border-radius: 50%;
-      background: var(--prompt);
-      box-shadow: 0 0 6px rgba(63,185,80,0.7);
-    }
-    .about-chip:hover {
-      border-color: rgba(63,185,80,0.6);
-      background: rgba(63,185,80,0.07);
-      transform: translateY(-1px);
-    }
-    .ach-k { color: var(--cmd); font-weight: 500; }
 
     /* .snapshot-v2 previously declared grid-template-columns/gap/max-width
        here, but `.snapshot` re-declares all three later at equal specificity
@@ -734,12 +326,6 @@
       font-size: 0.92rem;
       font-weight: 600;
       letter-spacing: 0.01em;
-    }
-    .sv2-tag {
-      color: var(--muted);
-      font-size: 0.72rem;
-      letter-spacing: 0.04em;
-      margin-top: 0.15rem;
     }
     .sv2-desc {
       color: var(--muted);
@@ -815,98 +401,6 @@
       stroke-linecap: round;
       stroke-linejoin: round;
       filter: drop-shadow(0 0 4px color-mix(in srgb, var(--bc) 30%, transparent));
-    }
-
-    .proj-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.85rem;
-      max-width: 880px;
-    }
-    @media (max-width: 720px) {
-      .proj-grid { grid-template-columns: 1fr; }
-    }
-    .pcard {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      padding: 0.95rem 1.05rem;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      background: rgba(13,17,23,0.5);
-      text-decoration: none;
-      color: inherit;
-      transition: border-color 0.15s, transform 0.15s, background 0.15s, box-shadow 0.15s;
-      position: relative;
-      overflow: hidden;
-    }
-    .pcard::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at 100% 0%, rgba(63,185,80,0.10), transparent 45%);
-      opacity: 0;
-      transition: opacity 0.2s;
-      pointer-events: none;
-    }
-    .pcard:hover {
-      border-color: rgba(63,185,80,0.6);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
-      text-decoration: none;
-    }
-    .pcard:hover::before { opacity: 1; }
-    .pcard-head {
-      display: flex;
-      align-items: center;
-      gap: 0.55rem;
-    }
-    .pcard-id {
-      font-size: 0.65rem;
-      letter-spacing: 0.12em;
-      color: var(--comment);
-      padding: 0.1rem 0.4rem;
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      flex-shrink: 0;
-    }
-    .pcard-name {
-      color: var(--cmd);
-      font-weight: 600;
-      font-size: 0.92rem;
-      letter-spacing: 0.01em;
-      flex: 1;
-      min-width: 0;
-    }
-    .pcard-arrow {
-      color: var(--prompt);
-      font-size: 0.95rem;
-      transition: transform 0.2s;
-    }
-    .pcard:hover .pcard-arrow {
-      transform: translate(2px, -2px);
-    }
-    .pcard-out {
-      color: var(--muted);
-      font-size: 0.78rem;
-      line-height: 1.55;
-      margin: 0;
-    }
-    .pcard-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.3rem;
-      margin-top: 0.2rem;
-    }
-    .pt {
-      font-size: 0.66rem;
-      letter-spacing: 0.04em;
-      color: var(--prompt);
-      border: 1px solid rgba(63,185,80,0.32);
-      background: rgba(63,185,80,0.06);
-      padding: 0.1rem 0.45rem;
-      border-radius: 4px;
     }
 
     section.ai {
@@ -991,30 +485,6 @@
       border-color: rgba(63,185,80,0.75);
       background: rgba(63,185,80,0.055);
       transform: translateY(-1px);
-    }
-
-    .snap-top {
-      display: flex;
-      align-items: center;
-      gap: 0.55rem;
-      margin-bottom: 0.35rem;
-    }
-
-    .snap-icon {
-      color: var(--prompt);
-      font-size: 0.9rem;
-    }
-
-    .snap-title {
-      color: var(--cmd);
-      font-size: 0.82rem;
-      font-weight: 600;
-    }
-
-    .snap-desc {
-      color: var(--muted);
-      font-size: 0.74rem;
-      line-height: 1.55;
     }
 
     /* ─── STATS ─── */
@@ -1128,7 +598,10 @@
       cursor: pointer;
       transition: color 0.15s, border-color 0.15s, background 0.15s, box-shadow 0.15s, transform 0.15s;
       position: relative;
-      animation: flagPulse 3.6s ease-in-out infinite;
+      /* Was `infinite`. These keyframes animate box-shadow on six elements,
+         which repaints every frame for as long as the tab is open. Three
+         passes is enough to signal "these are clickable", then it rests. */
+      animation: flagPulse 3.6s ease-in-out 3;
     }
 
     .fl:hover { color: var(--text); border-color: var(--muted); }
@@ -1266,29 +739,6 @@
     .pl:hover { color: var(--cmd); text-decoration: underline; }
 
     /* ─── CONTACT ─── */
-    .ct-status {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.8rem;
-      margin-bottom: 0.85rem;
-    }
-
-    .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--prompt);
-      box-shadow: 0 0 8px rgba(63, 185, 80, 0.6);
-      flex-shrink: 0;
-      animation: glow 2s ease-in-out infinite;
-    }
-
-    @keyframes glow {
-      0%, 100% { opacity: 1; box-shadow: 0 0 8px rgba(63,185,80,0.6); }
-      50%       { opacity: 0.6; box-shadow: 0 0 3px rgba(63,185,80,0.2); }
-    }
-
     .ct-headline {
       font-size: 1.1rem;
       font-weight: 700;
@@ -1309,7 +759,10 @@
       font-size: 0.78rem;
     }
 
-    .ct-meta span {
+    /* Direct children only — as a descendant selector this also matched the
+       nested .ct-lbl and overrode its inline-block, so every label broke onto
+       its own line and the 76px label column never applied. */
+    .ct-meta > span {
       display: block;
       margin-bottom: 0.2rem;
       color: var(--muted);
@@ -1432,7 +885,6 @@
       color: var(--comment);
     }
 
-    .f-status { display: flex; align-items: center; gap: 0.4rem; }
     .term-footer-c { justify-content: center; text-align: center; }
 
     .stats > .stat,
@@ -1494,7 +946,6 @@
     /* ─── RESPONSIVE ─── */
     @media (max-width: 900px) {
       .hero-grid { grid-template-columns: 1fr; }
-      .ascii-card { max-width: 420px; }
       .snapshot { grid-template-columns: 1fr; }
     }
     @media (max-width: 768px) {
@@ -1574,170 +1025,6 @@
                 <span class="termlog-dot" aria-hidden="true"></span>
               </div>
               <pre class="termlog-body" id="termlog"></pre>
-            </aside>
-            <aside class="statgrid-card" aria-label="Platform status grid" hidden>
-              <div class="statgrid-head">
-                <span class="tl tl-r"></span><span class="tl tl-y"></span><span class="tl tl-g"></span>
-                <span class="statgrid-title">platform/status</span>
-                <span class="statgrid-live"><span class="sg-dot"></span>live</span>
-              </div>
-              <div class="statgrid-body">
-                <div class="sg-row sg-head">
-                  <span>region</span><span>cloud</span><span>uptime</span><span>deploy</span><span>drift</span>
-                </div>
-                <div class="sg-row">
-                  <span class="sg-k">us-east-1</span><span class="sg-mute">aws/eks</span><span class="sg-ok">99.99%</span><span class="sg-mute">2m ago</span><span class="sg-ok">0</span>
-                </div>
-                <div class="sg-row">
-                  <span class="sg-k">eu-west-1</span><span class="sg-mute">aws/eks</span><span class="sg-ok">99.98%</span><span class="sg-mute">11m ago</span><span class="sg-ok">0</span>
-                </div>
-                <div class="sg-row">
-                  <span class="sg-k">europe-w4</span><span class="sg-mute">gcp/gke</span><span class="sg-ok">99.97%</span><span class="sg-mute">34m ago</span><span class="sg-ok">0</span>
-                </div>
-                <div class="sg-row">
-                  <span class="sg-k">westeurope</span><span class="sg-mute">az/aks</span><span class="sg-ok">99.95%</span><span class="sg-mute">1h ago</span><span class="sg-warn">1</span>
-                </div>
-                <div class="sg-divider"></div>
-                <div class="sg-foot">
-                  <div class="sg-pill"><span class="sg-pl">pipelines</span><span class="sg-pv sg-ok">42 ✓</span></div>
-                  <div class="sg-pill"><span class="sg-pl">cve</span><span class="sg-pv sg-ok">0 crit</span></div>
-                  <div class="sg-pill"><span class="sg-pl">cosign</span><span class="sg-pv sg-ok">signed</span></div>
-                </div>
-              </div>
-              <p class="ascii-caption">Live status across AWS, GCP, Azure — IaC, GitOps, signed builds, zero drift.</p>
-            </aside>
-            <aside class="pipe-card" aria-label="Delivery pipeline" hidden>
-              <div class="pipe-head">
-                <span class="tl tl-r"></span><span class="tl tl-y"></span><span class="tl tl-g"></span>
-                <span class="pipe-title">delivery.pipeline</span>
-                <span class="pipe-sha">sha 4f2a91c</span>
-              </div>
-              <div class="pipe-body">
-                <ol class="pipe-flow">
-                  <li class="pipe-step is-done">
-                    <span class="pipe-dot">◉</span>
-                    <span class="pipe-name">commit</span>
-                    <span class="pipe-meta">git push origin main</span>
-                  </li>
-                  <li class="pipe-step is-done">
-                    <span class="pipe-dot">◉</span>
-                    <span class="pipe-name">scan</span>
-                    <span class="pipe-meta">trivy · cosign · checkov</span>
-                  </li>
-                  <li class="pipe-step is-done">
-                    <span class="pipe-dot">◉</span>
-                    <span class="pipe-name">plan</span>
-                    <span class="pipe-meta">terraform · 12 +  3 ~  0 −</span>
-                  </li>
-                  <li class="pipe-step is-active">
-                    <span class="pipe-dot">◍</span>
-                    <span class="pipe-name">apply</span>
-                    <span class="pipe-meta">eks · gke · aks</span>
-                  </li>
-                  <li class="pipe-step">
-                    <span class="pipe-dot">○</span>
-                    <span class="pipe-name">ship</span>
-                    <span class="pipe-meta">argocd sync · canary 10%</span>
-                  </li>
-                </ol>
-                <div class="pipe-foot">
-                  <span class="pipe-tag">IaC</span>
-                  <span class="pipe-tag">GitOps</span>
-                  <span class="pipe-tag">DevSecOps</span>
-                  <span class="pipe-tag">multi-cloud</span>
-                </div>
-              </div>
-              <p class="ascii-caption">Commit → scan → plan → apply → ship. One pipeline across AWS, GCP, Azure.</p>
-            </aside>
-            <aside class="skill-card" aria-label="Skill levels" hidden>
-              <div class="skill-head">
-                <span class="tl tl-r"></span><span class="tl tl-y"></span><span class="tl tl-g"></span>
-                <span class="skill-title">~/skills.txt</span>
-                <span class="skill-meta">3.5y exp</span>
-              </div>
-              <div class="skill-body skill-tags">
-                <span class="sk-tag">Kubernetes</span>
-                <span class="sk-tag">Terraform / IaC</span>
-                <span class="sk-tag">AWS</span>
-                <span class="sk-tag">GCP</span>
-                <span class="sk-tag">Azure</span>
-                <span class="sk-tag">CI/CD · GitOps</span>
-                <span class="sk-tag">DevSecOps</span>
-                <span class="sk-tag">Helm · ArgoCD</span>
-                <span class="sk-tag">Prometheus · Grafana</span>
-                <span class="sk-tag">Python · Bash</span>
-              </div>
-              <p class="ascii-caption">Hands-on across cloud, IaC, and secure delivery — built and shipped in production.</p>
-            </aside>
-            <aside class="arch-card" aria-label="Platform architecture" hidden>
-              <div class="arch-head">
-                <span class="tl tl-r"></span><span class="tl tl-y"></span><span class="tl tl-g"></span>
-                <span class="arch-title">platform.architecture</span>
-              </div>
-              <svg class="arch-svg" viewBox="0 0 320 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three clouds feeding into a unified secure delivery platform">
-                <defs>
-                  <linearGradient id="archFlow" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stop-color="#3fb950" stop-opacity="0.9"/>
-                    <stop offset="100%" stop-color="#3fb950" stop-opacity="0.15"/>
-                  </linearGradient>
-                  <filter id="archGlow" x="-30%" y="-30%" width="160%" height="160%">
-                    <feGaussianBlur stdDeviation="1.6" result="b"/>
-                    <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-                  </filter>
-                </defs>
-
-                <!-- cloud nodes -->
-                <g class="arch-node" transform="translate(20,18)">
-                  <rect width="72" height="36" rx="6" fill="rgba(63,185,80,0.06)" stroke="#3fb950" stroke-opacity="0.55"/>
-                  <text x="36" y="15" text-anchor="middle" class="arch-t1">AWS</text>
-                  <text x="36" y="28" text-anchor="middle" class="arch-t2">EKS</text>
-                </g>
-                <g class="arch-node" transform="translate(124,18)">
-                  <rect width="72" height="36" rx="6" fill="rgba(63,185,80,0.06)" stroke="#3fb950" stroke-opacity="0.55"/>
-                  <text x="36" y="15" text-anchor="middle" class="arch-t1">GCP</text>
-                  <text x="36" y="28" text-anchor="middle" class="arch-t2">GKE</text>
-                </g>
-                <g class="arch-node" transform="translate(228,18)">
-                  <rect width="72" height="36" rx="6" fill="rgba(63,185,80,0.06)" stroke="#3fb950" stroke-opacity="0.55"/>
-                  <text x="36" y="15" text-anchor="middle" class="arch-t1">AZURE</text>
-                  <text x="36" y="28" text-anchor="middle" class="arch-t2">AKS</text>
-                </g>
-
-                <!-- flow lines -->
-                <g stroke="url(#archFlow)" stroke-width="1.4" fill="none" stroke-linecap="round">
-                  <path d="M56 54 C 56 80, 160 80, 160 100"/>
-                  <path d="M160 54 L 160 100"/>
-                  <path d="M264 54 C 264 80, 160 80, 160 100"/>
-                </g>
-                <g class="arch-pulse">
-                  <circle r="2.2" fill="#3fb950" filter="url(#archGlow)">
-                    <animateMotion dur="2.6s" repeatCount="indefinite" path="M56 54 C 56 80, 160 80, 160 100"/>
-                  </circle>
-                  <circle r="2.2" fill="#3fb950" filter="url(#archGlow)">
-                    <animateMotion dur="2.6s" begin="0.85s" repeatCount="indefinite" path="M160 54 L 160 100"/>
-                  </circle>
-                  <circle r="2.2" fill="#3fb950" filter="url(#archGlow)">
-                    <animateMotion dur="2.6s" begin="1.7s" repeatCount="indefinite" path="M264 54 C 264 80, 160 80, 160 100"/>
-                  </circle>
-                </g>
-
-                <!-- platform layer -->
-                <g transform="translate(40,100)">
-                  <rect width="240" height="44" rx="8" fill="rgba(63,185,80,0.08)" stroke="#3fb950" stroke-opacity="0.85" filter="url(#archGlow)"/>
-                  <text x="120" y="18" text-anchor="middle" class="arch-t1">SECURE DELIVERY PLATFORM</text>
-                  <g class="arch-pills">
-                    <text x="40"  y="34" text-anchor="middle" class="arch-t3">IaC</text>
-                    <text x="100" y="34" text-anchor="middle" class="arch-t3">GitOps</text>
-                    <text x="160" y="34" text-anchor="middle" class="arch-t3">CI/CD</text>
-                    <text x="220" y="34" text-anchor="middle" class="arch-t3">Observe</text>
-                  </g>
-                </g>
-
-                <!-- output line + label -->
-                <path d="M160 144 L 160 168" stroke="#3fb950" stroke-opacity="0.7" stroke-width="1.4" stroke-dasharray="3 3"/>
-                <text x="160" y="184" text-anchor="middle" class="arch-t2">monitor · scale · ship</text>
-              </svg>
-              <p class="ascii-caption">AWS, GCP, and Azure foundations shaped into one secure delivery platform.</p>
             </aside>
           </div>
         </div>
@@ -1897,15 +1184,15 @@
             <button class="fl" data-cat="security">--security</button>
           </div>
           <div class="sk-out on cloud-row" data-cat="cloud">
-            <a class="brand brand-aws" style="--bc:#ff9900;">
+            <span class="brand brand-aws" style="--bc:#ff9900;">
               <svg class="brand-glyph" viewBox="0 0 32 32" aria-hidden="true">
                 <text x="16" y="16" text-anchor="middle" fill="currentColor" font-family="Helvetica, Arial, sans-serif" font-weight="800" font-size="10" letter-spacing="-0.5">aws</text>
                 <path d="M6 22 Q 16 28 26 22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
                 <path d="M23 19.5 L 26 22 L 23.5 25" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
               <span>AWS</span>
-            </a>
-            <a class="brand brand-gcp" style="--bc:#4285f4;">
+            </span>
+            <span class="brand brand-gcp" style="--bc:#4285f4;">
               <svg class="brand-glyph" viewBox="0 0 32 32" aria-hidden="true">
                 <path fill="#ea4335" d="M21 11.4l3-3-.2-.2A9.6 9.6 0 0017 6c-3.7 0-7 2.1-8.6 5.2L12 14a5.7 5.7 0 015-3 5.6 5.6 0 014 1.4z"/>
                 <path fill="#4285f4" d="M28 17a11 11 0 00-.2-2H17v4h6.2c-.3 1.4-1 2.6-2.2 3.4l3.5 2.7A10.7 10.7 0 0028 17z"/>
@@ -1913,8 +1200,8 @@
                 <path fill="#34a853" d="M17 27a9.7 9.7 0 007.5-3l-3.5-2.7c-1 .7-2.3 1.1-4 1.1a5.6 5.6 0 01-5-3l-3.6 2.8A9.6 9.6 0 0017 27z"/>
               </svg>
               <span>GCP</span>
-            </a>
-            <a class="brand brand-azure" style="--bc:#3ab0ff;">
+            </span>
+            <span class="brand brand-azure" style="--bc:#3ab0ff;">
               <svg class="brand-glyph" viewBox="0 0 32 32" aria-hidden="true">
                 <linearGradient id="azg" x1="0" x2="1" y1="0" y2="1">
                   <stop offset="0" stop-color="#1683d8"/><stop offset="1" stop-color="#3ab0ff"/>
@@ -1922,7 +1209,7 @@
                 <path fill="url(#azg)" d="M14 4l-9 19h7l5-13zM18 8l-3 8 5 5-9 2h17z"/>
               </svg>
               <span>Azure</span>
-            </a>
+            </span>
           </div>
           <div class="sk-out" data-cat="platform">
             <span class="si si-logo" style="--bc:#326ce5;"><svg class="si-g" viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 21 7 19 18 12 22 5 18 3 7"/><circle cx="12" cy="12" r="3"/><line x1="12" y1="2" x2="12" y2="9"/><line x1="3" y1="7" x2="9" y2="11"/><line x1="21" y1="7" x2="15" y2="11"/><line x1="5" y1="18" x2="10" y2="14"/><line x1="19" y1="18" x2="14" y2="14"/></svg>Kubernetes</span>
@@ -2163,13 +1450,6 @@
         }
         await wait(120);
       }
-
-      const asciiCard = document.querySelector('#whoami .ascii-card.type-reveal');
-      if (asciiCard) {
-        asciiCard.classList.add('done', 'revealing');
-        await wait(360);
-        asciiCard.classList.remove('revealing');
-      }
     })();
 
     function wait(ms) {
@@ -2194,58 +1474,61 @@
       });
     })();
 
-    // ─── TERMINAL SCRIPT SEQUENCE ───
-    (async function() {
+    // ─── SECTION REVEAL ───
+    // Each section animates when it scrolls into view, independently.
+    // This previously ran as one serial await-chain over every section, which
+    // meant the contact buttons did not appear until ~11s after load no matter
+    // how fast you scrolled. Now nothing below the fold blocks anything above.
+    (function() {
       const sections = Array.from(document.querySelectorAll('.term-body > section.ai'));
+      const finalLine = document.querySelector('.final-line');
+
+      const revealNow = section => {
+        section.classList.add('v', 'out-ready');
+        section.querySelectorAll('.typewrite').forEach(el => el.classList.add('done'));
+      };
 
       if (noMotion) {
-        sections.forEach(el => {
-          el.style.opacity = 1;
-          el.style.transform = 'none';
-          el.classList.add('v', 'out-ready');
-        });
+        sections.forEach(revealNow);
         document.querySelectorAll('.typewrite').forEach(el => el.classList.add('done'));
         document.querySelectorAll('.type-reveal, .cert').forEach(el => el.classList.add('done'));
-        document.querySelector('.final-line')?.classList.add('ready');
+        finalLine?.classList.add('ready');
         return;
       }
 
-      await window.heroIntroDone;
-      await wait(220);
+      async function playSection(section) {
+        if (section.dataset.revealed) return;
+        section.dataset.revealed = 'true';
 
-      for (const section of sections) {
         section.classList.add('v');
 
         const command = section.querySelector('.pline .cmd');
-        if (command && !command.dataset.typedCommand) {
-          command.dataset.typedCommand = 'true';
-          await typeText(command, 26);
-          await wait(90);
-        }
+        if (command) await typeText(command, 26);
 
         section.classList.add('out-ready');
 
-        const lines = section.querySelectorAll('.typewrite:not(.done):not(.tw-active)');
-        for (const el of lines) {
+        for (const el of section.querySelectorAll('.typewrite:not(.done):not(.tw-active)')) {
           await typeText(el, Number(el.dataset.typeSpeed || 10));
         }
 
-        const staggerKids = section.querySelectorAll(
-          ':scope .stats > .stat, :scope .snapshot-v2 > .snap-card, :scope .proj-list > .proj, :scope .ct-headline, :scope .ct-sub, :scope .ct-meta, :scope .ct-btns'
-        );
-        if (staggerKids.length) {
-          const last = staggerKids[staggerKids.length - 1];
-          const cs = getComputedStyle(last);
-          const parseMs = v => (parseFloat(v) || 0) * (v.includes('ms') ? 1 : 1000);
-          const delay = parseMs(cs.transitionDelay.split(',')[0] || '0s');
-          const dur   = parseMs(cs.transitionDuration.split(',')[0] || '0s');
-          await wait(delay + dur + 120);
-        } else {
-          await wait(260);
+        if (section === sections[sections.length - 1]) {
+          finalLine?.classList.add('ready');
         }
       }
 
-      document.querySelector('.final-line')?.classList.add('ready');
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          io.unobserve(entry.target);
+          playSection(entry.target);
+        });
+      }, { rootMargin: '0px 0px -12% 0px', threshold: 0.12 });
+
+      // Hold the first section until the hero finishes typing so the opening
+      // beat still reads as one sequence; everything else is scroll-driven.
+      window.heroIntroDone.then(() => {
+        sections.forEach(s => io.observe(s));
+      });
     })();
 
     // ─── ACTIVE NAV ───
@@ -2297,18 +1580,41 @@
       const MAX_VISIBLE = 6;
       const lines = [];
 
-      function render(typingLine) {
-        const visible = lines.slice(-MAX_VISIBLE);
-        let html = visible.map(l => `<span class="tl-${l.cls}">${escape(l.txt)}</span>`).join('\n');
-        if (typingLine) {
-          if (visible.length) html += '\n';
-          html += `<span class="tl-${typingLine.cls} tl-cur">${escape(typingLine.txt)}</span>`;
-        }
-        el.innerHTML = html;
+      // Committed lines and the in-progress line live in separate nodes, so
+      // typing a character touches one text node instead of rebuilding the
+      // whole subtree. The previous version reassigned el.innerHTML on every
+      // keystroke tick (~20-45x/sec, forever).
+      const committedEl = document.createElement('span');
+      const breakEl     = document.createTextNode('');
+      const typingEl    = document.createElement('span');
+      el.textContent = '';
+      el.append(committedEl, breakEl, typingEl);
+
+      let typingActive = false;
+
+      function syncBreak() {
+        const hasCommitted = Math.min(lines.length, MAX_VISIBLE) > 0;
+        breakEl.nodeValue = (hasCommitted && typingActive) ? '\n' : '';
       }
 
-      function escape(s) {
-        return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+      function renderCommitted() {
+        const visible = lines.slice(-MAX_VISIBLE);
+        committedEl.textContent = '';
+        visible.forEach((l, i) => {
+          const span = document.createElement('span');
+          span.className = 'tl-' + l.cls;
+          span.textContent = l.txt;
+          if (i) committedEl.appendChild(document.createTextNode('\n'));
+          committedEl.appendChild(span);
+        });
+        syncBreak();
+      }
+
+      function setTyping(cls, txt) {
+        typingActive = txt !== null;
+        typingEl.className = typingActive ? `tl-${cls} tl-cur` : '';
+        typingEl.textContent = typingActive ? txt : '';
+        syncBreak();
       }
 
       function clsFor(t) {
@@ -2320,71 +1626,68 @@
         return 'mute';
       }
 
+      // The log is decorative and loops forever. Suspend it whenever the tab
+      // is hidden or the card is scrolled out of view, so an idle tab costs
+      // nothing; resume from wherever it left off.
+      let awake = false, pendingResume = null;
+
+      function schedule(fn, ms) {
+        if (!awake) { pendingResume = () => schedule(fn, ms); return; }
+        setTimeout(() => { awake ? fn() : (pendingResume = fn); }, ms);
+      }
+
       let idx = 0;
       function next() {
         if (idx >= SCRIPT.length) {
-          // restart loop
           idx = 0;
-          setTimeout(() => { lines.length = 0; render(); next(); }, 1800);
+          schedule(() => { lines.length = 0; setTyping(null, null); renderCommitted(); next(); }, 1800);
           return;
         }
         const item = SCRIPT[idx++];
         const cls = clsFor(item.t);
 
         if (item.t === 'cmd') {
-          // type out char by char
           let i = 0;
           const full = item.txt;
           const tick = () => {
-            const partial = full.slice(0, i);
-            render({ cls, txt: partial });
+            setTyping(cls, full.slice(0, i));
             if (i < full.length) {
               i++;
-              setTimeout(tick, 22 + Math.random() * 30);
+              schedule(tick, 22 + Math.random() * 30);
             } else {
+              setTyping(null, null);
               lines.push({ cls, txt: full });
-              render();
-              setTimeout(next, 320);
+              renderCommitted();
+              schedule(next, 320);
             }
           };
           tick();
         } else {
           lines.push({ cls, txt: item.txt });
-          render();
-          setTimeout(next, item.t === 'sp' ? 180 : 240 + Math.random() * 200);
+          renderCommitted();
+          schedule(next, item.t === 'sp' ? 180 : 240 + Math.random() * 200);
         }
       }
 
-      render();
-      const start = () => setTimeout(next, 400);
+      let inView = true;
+      const setAwake = () => {
+        const want = inView && document.visibilityState === 'visible';
+        if (want === awake) return;
+        awake = want;
+        if (awake && pendingResume) { const r = pendingResume; pendingResume = null; r(); }
+      };
+      document.addEventListener('visibilitychange', setAwake);
+      new IntersectionObserver(entries => {
+        inView = entries[0].isIntersecting;
+        setAwake();
+      }, { threshold: 0 }).observe(el);
+
+      renderCommitted();
+      const start = () => { setAwake(); schedule(next, 400); };
       if (window.heroIntroDone && typeof window.heroIntroDone.then === 'function') {
         window.heroIntroDone.then(start);
       } else {
         setTimeout(start, 600);
-      }
-    })();
-  </script>
-
-  <script>
-    (function skillBars() {
-      const rows = document.querySelectorAll('.skill-row');
-      if (!rows.length) return;
-      rows.forEach(r => {
-        const pct = Math.max(0, Math.min(100, parseInt(r.dataset.pct, 10) || 0));
-        r.style.setProperty('--w', pct + '%');
-      });
-      const reveal = () => {
-        rows.forEach((r, i) => {
-          setTimeout(() => r.classList.add('is-on'), 180 + i * 110);
-        });
-      };
-      if ('IntersectionObserver' in window) {
-        const io = new IntersectionObserver((es) => {
-          es.forEach(e => { if (e.isIntersecting) { reveal(); io.disconnect(); } });
-        }, { threshold: 0.3 });
-        io.observe(rows[0].closest('.skill-card'));
-      } else {
-        reveal();
       }
     })();
   </script>
