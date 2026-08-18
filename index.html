@@ -128,6 +128,10 @@
       z-index: 100;
     }
 
+    /* Anchor targets sit right under the sticky 44px chrome — without this,
+       clicking a nav link lands the section's top edge under the header. */
+    section[id] { scroll-margin-top: 60px; }
+
     .tls { display: flex; gap: 7px; flex-shrink: 0; }
     .tl { width: 12px; height: 12px; border-radius: 50%; }
     .tl-r { background: #ff5f57; }
@@ -994,12 +998,29 @@
       .win-title { display: none; }
       .stat { min-width: 90px; }
       .hero-name { font-size: 1.4rem; }
+
+      /* Desktop centers project copy for the terminal aesthetic; on narrow
+         screens centered paragraphs get ragged and hard to scan. */
+      .ph { justify-content: flex-start; text-align: left; }
+      .pd { text-align: left; margin: 0 0 0.35rem; }
+
+      /* Nav labels don't fit next to the traffic-light dots at this width —
+         let the strip scroll horizontally instead of clipping/wrapping. */
+      .term-nav {
+        overflow-x: auto;
+        max-width: calc(100vw - 100px);
+        scrollbar-width: none;
+      }
+      .term-nav::-webkit-scrollbar { display: none; }
+      .term-nav a { flex-shrink: 0; }
     }
 
     @media (max-width: 480px) {
       body { font-size: 12px; }
       .out { padding-left: 0.75rem; }
       .term-nav a { font-size: 0.62rem; padding: 0.18rem 0.4rem; }
+      .chrome { padding: 0 0.85rem; }
+      .term-nav { max-width: calc(100vw - 75px); gap: 0.05rem; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1419,6 +1440,10 @@
             <a href="https://www.linkedin.com/in/ellie-chodjayev/" target="_blank" rel="noopener" class="btn btn-p">
               <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 01107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>
               LinkedIn
+            </a>
+            <a href="mailto:zenmyx@gmail.com" class="btn btn-o">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+              Email
             </a>
             <a href="https://github.com/awakzdev" target="_blank" rel="noopener" class="btn btn-o">
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12a12 12 0 008.21 11.41c.6.11.82-.26.82-.58v-2.17c-3.34.73-4.04-1.61-4.04-1.61-.55-1.41-1.35-1.79-1.35-1.79-1.1-.76.08-.74.08-.74 1.22.08 1.86 1.25 1.86 1.25 1.08 1.85 2.83 1.32 3.52 1.01.11-.79.42-1.32.76-1.62-2.66-.3-5.46-1.33-5.46-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.51.12-3.15 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 016 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.64.24 2.85.12 3.15.77.84 1.24 1.91 1.24 3.22 0 4.61-2.8 5.63-5.47 5.93.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12 12 0 0024 12C24 5.37 18.63 0 12 0z"/></svg>
