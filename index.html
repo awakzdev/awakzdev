@@ -11,7 +11,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://eliazar.dev/" />
   <meta property="og:site_name" content="eliazar.dev" />
-  <meta property="og:title" content="Eliazar Chodjayev — Platform Engineer &amp; DevSecOps Architect" />
+  <meta property="og:title" content="Eliazar Chodjayev — Platform Engineer &amp; DevSecOps" />
   <meta property="og:description" content="Secure cloud infrastructure, Kubernetes, Terraform, DevSecOps, and compliance automation across AWS, GCP, and Azure." />
   <meta property="og:image" content="https://eliazar.dev/image.jpg" />
   <meta property="og:image:width" content="1536" />
@@ -19,7 +19,7 @@
   <meta property="og:image:alt" content="Eliazar Chodjayev — Platform Engineer" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Eliazar Chodjayev — Platform Engineer &amp; DevSecOps Architect" />
+  <meta name="twitter:title" content="Eliazar Chodjayev — Platform Engineer &amp; DevSecOps" />
   <meta name="twitter:description" content="Secure, production-ready cloud platforms across AWS, GCP, and Azure — Kubernetes, Terraform, and DevSecOps." />
   <meta name="twitter:image" content="https://eliazar.dev/image.jpg" />
 
@@ -716,6 +716,37 @@
 
 
 
+    /* ─── EXPERIENCE ─── */
+    .xp { display: flex; flex-direction: column; gap: 0.9rem; max-width: 820px; }
+    .xp-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 0.15rem 1rem;
+      padding-bottom: 0.9rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .xp-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .xp-role { color: var(--cmd); font-weight: 600; font-size: 0.88rem; }
+    .xp-when {
+      color: var(--comment); font-size: 0.74rem; white-space: nowrap;
+      text-align: right; align-self: center;
+    }
+    .xp-org { color: var(--prompt); font-size: 0.78rem; grid-column: 1 / -1; }
+    .xp-what { color: var(--muted); font-size: 0.78rem; line-height: 1.6; grid-column: 1 / -1; margin-top: 0.2rem; }
+    @media (max-width: 600px) {
+      .xp-row { grid-template-columns: 1fr; }
+      .xp-when { text-align: left; }
+    }
+
+    .proj-note {
+      color: var(--comment);
+      font-size: 0.74rem;
+      line-height: 1.65;
+      max-width: 720px;
+      margin: 0 auto 1rem;
+      text-align: center;
+    }
+
     /* ─── PROJECTS ─── */
     .proj-list { text-align: center; }
 
@@ -884,6 +915,9 @@
     .typing.done::after { display: none; }
 
     .typewrite:not(.tw-active):not(.done) { visibility: hidden; }
+    /* LCP: let the name paint on first frame; the sequence still reads as
+       one because the role/location lines below it are still gated. */
+    h1.typewrite { visibility: visible !important; }
 
     .typewrite.tw-active::after {
       content: '|';
@@ -1024,14 +1058,28 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
       *, *::before, *::after {
         animation-duration: 0.01ms !important;
         transition-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
       }
       .ai { opacity: 1; transform: none; }
       .fl { animation: none; }
     }
   </style>
+  <noscript><style>
+    /* Without JS the reveal script never runs, so every gated element stays
+       hidden. Neutralize the gating so the page is fully readable. */
+    .ai { opacity: 1 !important; transform: none !important; }
+    .ai .out { visibility: visible !important; }
+    .typewrite, .type-reveal, .cert { visibility: visible !important; }
+    .final-line { opacity: 1 !important; }
+    .stats > .stat, .snapshot-v2 > .snap-card, .proj-list > .proj,
+    #contact .ct-headline, #contact .ct-sub, #contact .ct-meta, #contact .ct-btns {
+      opacity: 1 !important; transform: none !important;
+    }
+  </style></noscript>
 </head>
 <body>
 
@@ -1049,6 +1097,7 @@
         <a href="#whoami" class="active">whoami</a>
         <a href="#about">about</a>
         <a href="#stack">stack</a>
+        <a href="#experience">experience</a>
         <a href="#projects">projects</a>
         <a href="#contact">contact</a>
       </nav>
@@ -1326,6 +1375,45 @@
         </div>
       </section>
 
+      <!-- EXPERIENCE -->
+      <section id="experience" class="ai">
+        <h2 class="sr-only">Experience</h2>
+        <div class="pline">
+          <span class="pmt">
+            <span class="pm-user">eliazar</span><span class="pm-at">@</span><span class="pm-host">dev</span><span class="pm-col">:</span><span class="pm-dir">~</span><span class="pm-dollar">$</span>
+          </span>
+          <span class="cmd">cat <span class="cmd-flag">experience.md</span></span>
+        </div>
+        <div class="out">
+          <div class="xp">
+            <div class="xp-row">
+              <span class="xp-role">Platform &amp; DevOps Engineer</span>
+              <span class="xp-when">Nov 2022 &mdash; Present</span>
+              <span class="xp-org">Cloud Castles &middot; Cloud consultancy &middot; Remote</span>
+              <span class="xp-what">20+ production landing zones across AWS, GCP, and Azure for client organizations. Zero-Trust and SOC 2-aligned controls, $45K+/year in cloud and tooling cost removed, release cycles cut by half.</span>
+            </div>
+            <div class="xp-row">
+              <span class="xp-role">Founder &amp; Sole Engineer</span>
+              <span class="xp-when">May 2026 &mdash; Present</span>
+              <span class="xp-org">Veritrail &middot; Independent &middot; Remote</span>
+              <span class="xp-what">SOC 2 evidence automation, built and shipped solo &mdash; backend, frontend, infrastructure, and deploy.</span>
+            </div>
+            <div class="xp-row">
+              <span class="xp-role">Founding Engineer</span>
+              <span class="xp-when">Aug 2024 &mdash; Mar 2026</span>
+              <span class="xp-org">SBC Finance &middot; Remote</span>
+              <span class="xp-what">Financial trading platform integrating the Interactive Brokers API for live market order execution. Zero to production.</span>
+            </div>
+            <div class="xp-row">
+              <span class="xp-role">Post-Silicon Validation Engineer</span>
+              <span class="xp-when">Jan 2022 &mdash; Jun 2022</span>
+              <span class="xp-org">Intel Corporation &middot; Contract &middot; Haifa, Israel</span>
+              <span class="xp-what">CPU and DDR platform stability through automated stress and reliability testing on Linux.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- PROJECTS -->
       <section id="projects" class="ai">
         <h2 class="sr-only">Projects</h2>
@@ -1336,6 +1424,9 @@
           <span class="cmd">./projects.sh</span>
         </div>
         <div class="out proj-list">
+          <p class="proj-note">Extracted and sanitized from private client and production work, then
+            published as standalone reference repos &mdash; so commit history reflects the date of
+            publication, not the years of work behind them.</p>
 
           <div class="proj">
             <div class="ph">
