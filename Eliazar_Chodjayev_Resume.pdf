@@ -24,7 +24,7 @@ endobj
 <<
 /Type /Page
 /Annots [ 4 0 R 5 0 R 6 0 R ]
-/Contents 35 0 R
+/Contents 7 0 R
 /MediaBox [ 0 0 612 792 ]
 /Parent 2 0 R
 /Resources <<
@@ -82,10 +82,10 @@ endobj
 endobj
 7 0 obj
 <<
-/Length 8481
+/Length 8470
 >>
 stream
-q q 1 0 0 1 57.84 733.2 cm .105882 .227451 .360784 rg BT/F2+0 21 Tf 162.0887 3 TD (Eliazar Chodjayev)Tj ET Q q 1 0 0 1 57.84 716.7 cm 0 0 0 rg BT/F3+0 11.5 Tf 123.1508 3 TD (Platform Engineer | DevOps & Cloud Infrastructure)Tj ET Q q 1 0 0 1 57.84 701.7 cm .247059 .247059 .247059 rg BT/F3+0 9.2 Tf 80.75639 2.8 TD (Israel  )Tj (|)Tj (  +972-50-246-1700  )Tj (|)Tj (  )Tj .105882 .227451 .360784 rg (zenmyx@gmail.com)Tj .247059 .247059 .247059 rg (  )Tj (|)Tj (  )Tj .105882 .227451 .360784 rg (in/ellie-chodjayev)Tj .247059 .247059 .247059 rg (  )Tj (|)Tj (  )Tj .105882 .227451 .360784 rg (eliazar.dev)Tj ET Q q 1 0 0 1 57.84 693.6 cm .105882 .227451 .360784 RG 1 J 1.1 w 0 0 m 496.32 0 l S Q q 1 0 0 1 57.84 672 cm .105882 .227451 .360784 rg BT/F2+0 11.4 Tf 220.8011 2.2 TD (SUMMARY)Tj ET Q q 1 0 0 1 57.84 630.9 cm 0 0 0 rg BT/F3+0 9.4 Tf .944131 30.2 TD (Platform Engineer with 4+ years building and operating multi-cloud infrastructure across AWS, GCP, and Azure. End-to-end)Tj 3.878418 -13.200001 TD (ownership spanning landing-zone architecture, Kubernetes, CI/CD, observability, and SOC 2-aligned security, from design)Tj 180.156 -13.2 TD (through production operations.)Tj ET Q q 1 0 0 1 57.84 609.3 cm .105882 .227451 .360784 rg BT/F2+0 11.4 Tf 0 2.2 TD (EXPERIENCE)Tj ET Q q 1 0 0 1 57.84 607.05 cm .607843 .654902 .721569 RG 1 J .75 w 0 0 m 496.32 0 l S Q q 1 0 0 1 57.84 586.75 cm 0 0 0 rg BT/F2+0 9.6 Tf 0 2.2 TD (Platform & DevOps Engineer)Tj ET Q q 1 0 0 1 57.84 575.25 cm .290196 .352941 .45098 rg BT/F4+0 8.9 Tf 0 2.1 TD (Cloud Castles | Cloud consultancy | Full-time | Remote | Nov 2022 - Present)Tj ET Q q 1 0 0 1 57.84 547.85 cm 0 0 0 rg BT/F3+0 9.2 Tf 10.999999 15.6 TD (-  Provisioned and operated production cloud infrastructure across AWS, GCP, and Azure with Terraform, Terragrunt,)Tj 7.106641 -12.4 TD (Crossplane, and ACK)Tj ET Q q 1 0 0 1 57.84 534.45 cm 0 0 0 rg BT/F3+0 9.2 Tf 10.999999 3.2 TD (-  Cut $45K+/year in cloud and tooling costs by removing redundant SaaS tools and right-sizing compute)Tj ET Q q 1 0 0 1 57.84 508.65 cm 0 0 0 rg BT/F3+0 9.2 Tf 10.999999 15.6 TD (-  Implemented Zero-Trust and SOC 2-aligned security controls \(Checkmarx, Orca, WAF, CIS hardening, QRadar SIEM\),)Tj 7.106641 -12.4 TD (supporting a client through its SOC 2 audit and remediating all high/critical findings within SLA)Tj ET Q q 1 0 0 1 57.84 482.85 cm 0 0 0 rg BT/F3+0 9.2 Tf 10.999999 15.6 TD (-  Reduced release cycle times by 50%+ through caching and parallel execution in CI/CD pipelines across GitHub Actions,)Tj 7.106641 -12.4 TD (GitLab CI, Azure DevOps, and Jenkins)Tj ET Q q 1 0 0 1 57.84 469.45 cm 0 0 0 rg BT/F3+0 9.2 Tf 10.999999 3.2 TD (-  Operated production GKE, EKS, and AKS clusters with Helm, ArgoCD, and Karpenter, maintaining 99.9% uptime)Tj ET Q q 1 0 0 1 57.84 449.15 cm 0 0 0 rg BT/F2+0 9.6 Tf 0 2.2 TD (Founder & Sole Engineer)Tj ET Q q 1 0 0 1 57.84 437.65 cm .290196 .352941 .45098 rg BT/F4+0 8.9 Tf 0 2.1 TD (Veritrail | Independent | Part-time | Remote | May 2026 - Present)Tj ET Q q 1 0 0 1 57.84 410.25 cm 0 0 0 rg BT/F3+0 9.2 Tf 10.999999 15.6 TD (-  Built a multi-tenant platform that automates SOC 2 evidence collection - 140+ automated checks mapped across 90)Tj 7.106641 -12.4 TD (controls across SOC 2, CIS AWS L1, and ISO 27001)Tj ET Q q 1 0 0 1 57.84 396.85 cm 0 0 0 rg BT/F3+0 9.2 Tf 10.999999 3.2 TD (-  Designed agentless cross-account evidence collection using scoped, read-only IAM roles)Tj ET Q q 1 0 0 1 57.84 383.45 cm 0 0 0 rg BT/F3+0 9.2 Tf 10.999999 3.2 TD (-  Architected and built the full platform: multi-cloud collection, SSO, RBAC, and 150+ CI tests)Tj ET Q q 1 0 0 1 57.84 363.15 cm 0 0 0 rg BT/F2+0 9.6 Tf 0 2.2 TD (Founding Engineer)Tj ET Q q 1 0 0 1 57.84 351.65 cm .290196 .352941 .45098 rg BT/F4+0 8.9 Tf 0 2.1 TD (SBC Finance | Part-time | Remote | Aug 2024 - Mar 2026)Tj ET Q q 1 0 0 1 57.84 336.65 cm 0 0 0 rg BT/F3+0 9.2 Tf 10.999999 3.2 TD (-  Shipped a financial trading platform integrating the Interactive Brokers API for live market order execution)Tj ET Q q 1 0 0 1 57.84 323.25 cm 0 0 0 rg BT/F3+0 9.2 Tf 10.999999 3.2 TD (-  Architected the system end to end - security, infrastructure, observability, CI/CD - zero to production)Tj ET Q q 1 0 0 1 57.84 302.95 cm 0 0 0 rg BT/F2+0 9.6 Tf 0 2.2 TD (Post-Silicon Validation Engineer)Tj ET Q q 1 0 0 1 57.84 291.45 cm .290196 .352941 .45098 rg BT/F4+0 8.9 Tf 0 2.1 TD (Intel Corporation | Contract | Haifa, Israel | Jan 2022 - Jun 2022)Tj ET Q q 1 0 0 1 57.84 276.45 cm 0 0 0 rg BT/F3+0 9.2 Tf 10.999999 3.2 TD (-  Validated CPU and DDR platform stability through automated stress and reliability testing on Linux)Tj ET Q q 1 0 0 1 57.84 263.05 cm 0 0 0 rg BT/F3+0 9.2 Tf 10.999999 3.2 TD (-  Automated operational workflows using Python and Azure DevOps pipelines, reducing manual effort by 75%)Tj ET Q q 1 0 0 1 57.84 242.75 cm 0 0 0 rg BT/F2+0 9.6 Tf 0 2.2 TD (System Administrator)Tj ET Q q 1 0 0 1 57.84 231.25 cm .290196 .352941 .45098 rg BT/F4+0 8.9 Tf 0 2.1 TD (ONE Technologies | Part-time | Haifa, Israel | Aug 2021 - Jan 2022)Tj ET Q q 1 0 0 1 57.84 216.25 cm 0 0 0 rg BT/F3+0 9.2 Tf 10.999999 3.2 TD (-  Administered Windows Server technologies including WSUS, WDS, IIS, AD DS, iSCSI, DFS, and GPOs)Tj ET Q q 1 0 0 1 57.84 202.85 cm 0 0 0 rg BT/F3+0 9.2 Tf 10.999999 3.2 TD (-  Managed networking infrastructure across LAN/WAN, DNS, DHCP, TCP/IP, UDP, switches, and routers)Tj ET Q q 1 0 0 1 57.84 181.25 cm .105882 .227451 .360784 rg BT/F2+0 11.4 Tf 0 2.2 TD (SKILLS)Tj ET Q q 1 0 0 1 57.84 179.0 cm .607843 .654902 .721569 RG 1 J .75 w 0 0 m 496.32 0 l S Q q q 1 0 0 1 57.84 159.4 cm .105882 .227451 .360784 rg BT/F2+0 9.2 Tf 0 3.8 TD (Cloud & IaC)Tj ET Q q 1 0 0 1 151.44 159.4 cm 0 0 0 rg BT/F3+0 9.2 Tf 0 3.8 TD (AWS, GCP, Azure, Terraform, Terragrunt, CloudFormation, Crossplane, ACK, Ansible)Tj ET Q q 1 0 0 1 57.84 143.2 cm .105882 .227451 .360784 rg BT/F2+0 9.2 Tf 0 3.8 TD (Kubernetes)Tj ET Q q 1 0 0 1 151.44 143.2 cm 0 0 0 rg BT/F3+0 9.2 Tf 0 3.8 TD (GKE, EKS, AKS, Helm, ArgoCD, Argo Workflows, KEDA, Karpenter, Traefik)Tj ET Q q 1 0 0 1 57.84 127.0 cm .105882 .227451 .360784 rg BT/F2+0 9.2 Tf 0 3.8 TD (CI/CD & DevSecOps)Tj ET Q q 1 0 0 1 151.44 114.0 cm 0 0 0 rg BT/F3+0 9.2 Tf 0 16.8 TD (GitHub Actions, GitLab CI, Azure DevOps, Jenkins, AWS CodeBuild/Deploy/Pipeline, Artifactory,)Tj 0 -13 TD (SAST, SCA, SBOM, Secret Detection, Checkmarx, Orca, OWASP, WAF, CIS Hardening)Tj ET Q q Q q Q q Q q Q q Q q Q Q q Q q Q q Q Q
+q q 1 0 0 1 57.84 733.2 cm .105882 .227451 .360784 rg BT/F2+0 21 Tf 162.0887 3 TD (Eliazar Chodjayev)Tj ET Q q 1 0 0 1 57.84 716.7 cm 0 0 0 rg BT/F3+0 11.5 Tf 123.1508 3 TD (Platform Engineer | DevOps & Cloud Infrastructure)Tj ET Q q 1 0 0 1 57.84 701.7 cm .247059 .247059 .247059 rg BT/F3+0 9.2 Tf 80.75639 2.8 TD (Israel  )Tj (|)Tj (  +972-50-246-1700  )Tj (|)Tj (  )Tj .105882 .227451 .360784 rg (zenmyx@gmail.com)Tj .247059 .247059 .247059 rg (  )Tj (|)Tj (  )Tj .105882 .227451 .360784 rg (in/ellie-chodjayev)Tj .247059 .247059 .247059 rg (  )Tj (|)Tj (  )Tj .105882 .227451 .360784 rg (eliazar.dev)Tj ET Q q 1 0 0 1 57.84 693.6 cm .105882 .227451 .360784 RG 1 J 1.1 w 0 0 m 496.32 0 l S Q q 1 0 0 1 57.84 672 cm .105882 .227451 .360784 rg BT/F2+0 11.4 Tf 220.8011 2.2 TD (SUMMARY)Tj ET Q q 1 0 0 1 57.84 630.9 cm 0 0 0 rg BT/F3+0 9.4 Tf 0.9494 30.2 TD (Platform Engineer with 4+ years building and operating multi-cloud infrastructure across AWS, GCP, and Azure. End-to-end)Tj 11.562 -13.2 TD (ownership spanning infrastructure as code, Kubernetes, CI/CD, observability, and SOC 2-aligned security, from design)Tj 172.4618 -13.2 TD (through production operations.)Tj ET Q q 1 0 0 1 57.84 609.3 cm .105882 .227451 .360784 rg BT/F2+0 11.4 Tf 0 2.2 TD (EXPERIENCE)Tj ET Q q 1 0 0 1 57.84 607.05 cm .607843 .654902 .721569 RG 1 J .75 w 0 0 m 496.32 0 l S Q q 1 0 0 1 57.84 586.75 cm 0 0 0 rg BT/F2+0 9.6 Tf 0 2.2 TD (Platform & DevOps Engineer)Tj ET Q q 1 0 0 1 57.84 575.25 cm .290196 .352941 .45098 rg BT/F4+0 8.9 Tf 0 2.1 TD (Cloud Castles | Cloud consultancy | Full-time | Remote | Nov 2022 - Present)Tj ET Q q 1 0 0 1 57.84 547.85 cm 0 0 0 rg BT/F3+0 9.2 Tf 10.999999 15.6 TD (-  Provisioned and operated production cloud infrastructure across AWS, GCP, and Azure with Terraform, Terragrunt,)Tj 7.106641 -12.4 TD (Crossplane, and ACK)Tj ET Q q 1 0 0 1 57.84 534.45 cm 0 0 0 rg BT/F3+0 9.2 Tf 10.999999 3.2 TD (-  Cut $45K+/year in cloud and tooling costs by removing redundant SaaS tools and right-sizing compute)Tj ET Q q 1 0 0 1 57.84 508.65 cm 0 0 0 rg BT/F3+0 9.2 Tf 10.999999 15.6 TD (-  Implemented Zero-Trust and SOC 2-aligned security controls \(Checkmarx, Orca, WAF, CIS hardening, QRadar SIEM\),)Tj 7.106641 -12.4 TD (supporting a client through its SOC 2 audit and remediating all high/critical findings within SLA)Tj ET Q q 1 0 0 1 57.84 482.85 cm 0 0 0 rg BT/F3+0 9.2 Tf 10.999999 15.6 TD (-  Reduced release cycle times by 50%+ through caching and parallel execution in CI/CD pipelines across GitHub Actions,)Tj 7.106641 -12.4 TD (GitLab CI, Azure DevOps, and Jenkins)Tj ET Q q 1 0 0 1 57.84 469.45 cm 0 0 0 rg BT/F3+0 9.2 Tf 10.999999 3.2 TD (-  Operated production GKE, EKS, and AKS clusters via GitOps with Helm and ArgoCD, maintaining 99.9% uptime)Tj ET Q q 1 0 0 1 57.84 449.15 cm 0 0 0 rg BT/F2+0 9.6 Tf 0 2.2 TD (Founder & Sole Engineer)Tj ET Q q 1 0 0 1 57.84 437.65 cm .290196 .352941 .45098 rg BT/F4+0 8.9 Tf 0 2.1 TD (Veritrail | Independent | Part-time | Remote | May 2026 - Present)Tj ET Q q 1 0 0 1 57.84 410.25 cm 0 0 0 rg BT/F3+0 9.2 Tf 10.999999 15.6 TD (-  Built a multi-tenant platform that automates SOC 2 evidence collection - 140+ automated checks mapped across 90)Tj 7.106641 -12.4 TD (controls across SOC 2, CIS AWS L1, and ISO 27001)Tj ET Q q 1 0 0 1 57.84 396.85 cm 0 0 0 rg BT/F3+0 9.2 Tf 10.999999 3.2 TD (-  Designed agentless cross-account evidence collection using scoped, read-only IAM roles)Tj ET Q q 1 0 0 1 57.84 383.45 cm 0 0 0 rg BT/F3+0 9.2 Tf 10.999999 3.2 TD (-  Architected and built the full platform: multi-cloud collection, SSO, RBAC, and 150+ CI tests)Tj ET Q q 1 0 0 1 57.84 363.15 cm 0 0 0 rg BT/F2+0 9.6 Tf 0 2.2 TD (Founding Engineer)Tj ET Q q 1 0 0 1 57.84 351.65 cm .290196 .352941 .45098 rg BT/F4+0 8.9 Tf 0 2.1 TD (SBC Finance | Part-time | Remote | Aug 2024 - Mar 2026)Tj ET Q q 1 0 0 1 57.84 336.65 cm 0 0 0 rg BT/F3+0 9.2 Tf 10.999999 3.2 TD (-  Shipped a financial trading platform integrating the Interactive Brokers API for live market order execution)Tj ET Q q 1 0 0 1 57.84 323.25 cm 0 0 0 rg BT/F3+0 9.2 Tf 10.999999 3.2 TD (-  Architected the system end to end - security, infrastructure, observability, CI/CD - zero to production)Tj ET Q q 1 0 0 1 57.84 302.95 cm 0 0 0 rg BT/F2+0 9.6 Tf 0 2.2 TD (Post-Silicon Validation Engineer)Tj ET Q q 1 0 0 1 57.84 291.45 cm .290196 .352941 .45098 rg BT/F4+0 8.9 Tf 0 2.1 TD (Intel Corporation | Contract | Haifa, Israel | Jan 2022 - Jun 2022)Tj ET Q q 1 0 0 1 57.84 276.45 cm 0 0 0 rg BT/F3+0 9.2 Tf 10.999999 3.2 TD (-  Validated CPU and DDR platform stability through automated stress and reliability testing on Linux)Tj ET Q q 1 0 0 1 57.84 263.05 cm 0 0 0 rg BT/F3+0 9.2 Tf 10.999999 3.2 TD (-  Automated operational workflows using Python and Azure DevOps pipelines, reducing manual effort by 75%)Tj ET Q q 1 0 0 1 57.84 242.75 cm 0 0 0 rg BT/F2+0 9.6 Tf 0 2.2 TD (System Administrator)Tj ET Q q 1 0 0 1 57.84 231.25 cm .290196 .352941 .45098 rg BT/F4+0 8.9 Tf 0 2.1 TD (ONE Technologies | Part-time | Haifa, Israel | Aug 2021 - Jan 2022)Tj ET Q q 1 0 0 1 57.84 216.25 cm 0 0 0 rg BT/F3+0 9.2 Tf 10.999999 3.2 TD (-  Administered Windows Server technologies including WSUS, WDS, IIS, AD DS, iSCSI, DFS, and GPOs)Tj ET Q q 1 0 0 1 57.84 202.85 cm 0 0 0 rg BT/F3+0 9.2 Tf 10.999999 3.2 TD (-  Managed networking infrastructure across LAN/WAN, DNS, DHCP, TCP/IP, UDP, switches, and routers)Tj ET Q q 1 0 0 1 57.84 181.25 cm .105882 .227451 .360784 rg BT/F2+0 11.4 Tf 0 2.2 TD (SKILLS)Tj ET Q q 1 0 0 1 57.84 179.0 cm .607843 .654902 .721569 RG 1 J .75 w 0 0 m 496.32 0 l S Q q q 1 0 0 1 57.84 159.4 cm .105882 .227451 .360784 rg BT/F2+0 9.2 Tf 0 3.8 TD (Cloud & IaC)Tj ET Q q 1 0 0 1 151.44 159.4 cm 0 0 0 rg BT/F3+0 9.2 Tf 0 3.8 TD (AWS, GCP, Azure, Terraform, Terragrunt, CloudFormation, Crossplane, ACK, Ansible)Tj ET Q q 1 0 0 1 57.84 143.2 cm .105882 .227451 .360784 rg BT/F2+0 9.2 Tf 0 3.8 TD (Kubernetes)Tj ET Q q 1 0 0 1 151.44 143.2 cm 0 0 0 rg BT/F3+0 9.2 Tf 0 3.8 TD (GKE, EKS, AKS, Helm, ArgoCD, Argo Workflows, KEDA, Karpenter, Traefik)Tj ET Q q 1 0 0 1 57.84 127.0 cm .105882 .227451 .360784 rg BT/F2+0 9.2 Tf 0 3.8 TD (CI/CD & DevSecOps)Tj ET Q q 1 0 0 1 151.44 114.0 cm 0 0 0 rg BT/F3+0 9.2 Tf 0 16.8 TD (GitHub Actions, GitLab CI, Azure DevOps, Jenkins, AWS CodeBuild/Deploy/Pipeline, Artifactory,)Tj 0 -13 TD (SAST, SCA, SBOM, Secret Detection, Checkmarx, Orca, OWASP, WAF, CIS Hardening)Tj ET Q q Q q Q q Q q Q q Q q Q Q q Q q Q q Q Q
 
 q
 40 19.2 532 94 re
@@ -860,115 +860,50 @@ endobj
 /Trapped /False
 >>
 endobj
-35 0 obj
-<<
-/Length 8471
->>
-stream
-q q 1 0 0 1 57.84 733.2 cm .105882 .227451 .360784 rg BT/F2+0 21 Tf 162.0887 3 TD (Eliazar Chodjayev)Tj ET Q q 1 0 0 1 57.84 716.7 cm 0 0 0 rg BT/F3+0 11.5 Tf 123.1508 3 TD (Platform Engineer | DevOps & Cloud Infrastructure)Tj ET Q q 1 0 0 1 57.84 701.7 cm .247059 .247059 .247059 rg BT/F3+0 9.2 Tf 80.75639 2.8 TD (Israel  )Tj (|)Tj (  +972-50-246-1700  )Tj (|)Tj (  )Tj .105882 .227451 .360784 rg (zenmyx@gmail.com)Tj .247059 .247059 .247059 rg (  )Tj (|)Tj (  )Tj .105882 .227451 .360784 rg (in/ellie-chodjayev)Tj .247059 .247059 .247059 rg (  )Tj (|)Tj (  )Tj .105882 .227451 .360784 rg (eliazar.dev)Tj ET Q q 1 0 0 1 57.84 693.6 cm .105882 .227451 .360784 RG 1 J 1.1 w 0 0 m 496.32 0 l S Q q 1 0 0 1 57.84 672 cm .105882 .227451 .360784 rg BT/F2+0 11.4 Tf 220.8011 2.2 TD (SUMMARY)Tj ET Q q 1 0 0 1 57.84 630.9 cm 0 0 0 rg BT/F3+0 9.4 Tf 0.9494 30.2 TD (Platform Engineer with 4+ years building and operating multi-cloud infrastructure across AWS, GCP, and Azure. End-to-end)Tj 11.562 -13.2 TD (ownership spanning infrastructure as code, Kubernetes, CI/CD, observability, and SOC 2-aligned security, from design)Tj 172.4618 -13.2 TD (through production operations.)Tj ET Q q 1 0 0 1 57.84 609.3 cm .105882 .227451 .360784 rg BT/F2+0 11.4 Tf 0 2.2 TD (EXPERIENCE)Tj ET Q q 1 0 0 1 57.84 607.05 cm .607843 .654902 .721569 RG 1 J .75 w 0 0 m 496.32 0 l S Q q 1 0 0 1 57.84 586.75 cm 0 0 0 rg BT/F2+0 9.6 Tf 0 2.2 TD (Platform & DevOps Engineer)Tj ET Q q 1 0 0 1 57.84 575.25 cm .290196 .352941 .45098 rg BT/F4+0 8.9 Tf 0 2.1 TD (Cloud Castles | Cloud consultancy | Full-time | Remote | Nov 2022 - Present)Tj ET Q q 1 0 0 1 57.84 547.85 cm 0 0 0 rg BT/F3+0 9.2 Tf 10.999999 15.6 TD (-  Provisioned and operated production cloud infrastructure across AWS, GCP, and Azure with Terraform, Terragrunt,)Tj 7.106641 -12.4 TD (Crossplane, and ACK)Tj ET Q q 1 0 0 1 57.84 534.45 cm 0 0 0 rg BT/F3+0 9.2 Tf 10.999999 3.2 TD (-  Cut $45K+/year in cloud and tooling costs by removing redundant SaaS tools and right-sizing compute)Tj ET Q q 1 0 0 1 57.84 508.65 cm 0 0 0 rg BT/F3+0 9.2 Tf 10.999999 15.6 TD (-  Implemented Zero-Trust and SOC 2-aligned security controls \(Checkmarx, Orca, WAF, CIS hardening, QRadar SIEM\),)Tj 7.106641 -12.4 TD (supporting a client through its SOC 2 audit and remediating all high/critical findings within SLA)Tj ET Q q 1 0 0 1 57.84 482.85 cm 0 0 0 rg BT/F3+0 9.2 Tf 10.999999 15.6 TD (-  Reduced release cycle times by 50%+ through caching and parallel execution in CI/CD pipelines across GitHub Actions,)Tj 7.106641 -12.4 TD (GitLab CI, Azure DevOps, and Jenkins)Tj ET Q q 1 0 0 1 57.84 469.45 cm 0 0 0 rg BT/F3+0 9.2 Tf 10.999999 3.2 TD (-  Operated production GKE, EKS, and AKS clusters with Helm, ArgoCD, and Karpenter, maintaining 99.9% uptime)Tj ET Q q 1 0 0 1 57.84 449.15 cm 0 0 0 rg BT/F2+0 9.6 Tf 0 2.2 TD (Founder & Sole Engineer)Tj ET Q q 1 0 0 1 57.84 437.65 cm .290196 .352941 .45098 rg BT/F4+0 8.9 Tf 0 2.1 TD (Veritrail | Independent | Part-time | Remote | May 2026 - Present)Tj ET Q q 1 0 0 1 57.84 410.25 cm 0 0 0 rg BT/F3+0 9.2 Tf 10.999999 15.6 TD (-  Built a multi-tenant platform that automates SOC 2 evidence collection - 140+ automated checks mapped across 90)Tj 7.106641 -12.4 TD (controls across SOC 2, CIS AWS L1, and ISO 27001)Tj ET Q q 1 0 0 1 57.84 396.85 cm 0 0 0 rg BT/F3+0 9.2 Tf 10.999999 3.2 TD (-  Designed agentless cross-account evidence collection using scoped, read-only IAM roles)Tj ET Q q 1 0 0 1 57.84 383.45 cm 0 0 0 rg BT/F3+0 9.2 Tf 10.999999 3.2 TD (-  Architected and built the full platform: multi-cloud collection, SSO, RBAC, and 150+ CI tests)Tj ET Q q 1 0 0 1 57.84 363.15 cm 0 0 0 rg BT/F2+0 9.6 Tf 0 2.2 TD (Founding Engineer)Tj ET Q q 1 0 0 1 57.84 351.65 cm .290196 .352941 .45098 rg BT/F4+0 8.9 Tf 0 2.1 TD (SBC Finance | Part-time | Remote | Aug 2024 - Mar 2026)Tj ET Q q 1 0 0 1 57.84 336.65 cm 0 0 0 rg BT/F3+0 9.2 Tf 10.999999 3.2 TD (-  Shipped a financial trading platform integrating the Interactive Brokers API for live market order execution)Tj ET Q q 1 0 0 1 57.84 323.25 cm 0 0 0 rg BT/F3+0 9.2 Tf 10.999999 3.2 TD (-  Architected the system end to end - security, infrastructure, observability, CI/CD - zero to production)Tj ET Q q 1 0 0 1 57.84 302.95 cm 0 0 0 rg BT/F2+0 9.6 Tf 0 2.2 TD (Post-Silicon Validation Engineer)Tj ET Q q 1 0 0 1 57.84 291.45 cm .290196 .352941 .45098 rg BT/F4+0 8.9 Tf 0 2.1 TD (Intel Corporation | Contract | Haifa, Israel | Jan 2022 - Jun 2022)Tj ET Q q 1 0 0 1 57.84 276.45 cm 0 0 0 rg BT/F3+0 9.2 Tf 10.999999 3.2 TD (-  Validated CPU and DDR platform stability through automated stress and reliability testing on Linux)Tj ET Q q 1 0 0 1 57.84 263.05 cm 0 0 0 rg BT/F3+0 9.2 Tf 10.999999 3.2 TD (-  Automated operational workflows using Python and Azure DevOps pipelines, reducing manual effort by 75%)Tj ET Q q 1 0 0 1 57.84 242.75 cm 0 0 0 rg BT/F2+0 9.6 Tf 0 2.2 TD (System Administrator)Tj ET Q q 1 0 0 1 57.84 231.25 cm .290196 .352941 .45098 rg BT/F4+0 8.9 Tf 0 2.1 TD (ONE Technologies | Part-time | Haifa, Israel | Aug 2021 - Jan 2022)Tj ET Q q 1 0 0 1 57.84 216.25 cm 0 0 0 rg BT/F3+0 9.2 Tf 10.999999 3.2 TD (-  Administered Windows Server technologies including WSUS, WDS, IIS, AD DS, iSCSI, DFS, and GPOs)Tj ET Q q 1 0 0 1 57.84 202.85 cm 0 0 0 rg BT/F3+0 9.2 Tf 10.999999 3.2 TD (-  Managed networking infrastructure across LAN/WAN, DNS, DHCP, TCP/IP, UDP, switches, and routers)Tj ET Q q 1 0 0 1 57.84 181.25 cm .105882 .227451 .360784 rg BT/F2+0 11.4 Tf 0 2.2 TD (SKILLS)Tj ET Q q 1 0 0 1 57.84 179.0 cm .607843 .654902 .721569 RG 1 J .75 w 0 0 m 496.32 0 l S Q q q 1 0 0 1 57.84 159.4 cm .105882 .227451 .360784 rg BT/F2+0 9.2 Tf 0 3.8 TD (Cloud & IaC)Tj ET Q q 1 0 0 1 151.44 159.4 cm 0 0 0 rg BT/F3+0 9.2 Tf 0 3.8 TD (AWS, GCP, Azure, Terraform, Terragrunt, CloudFormation, Crossplane, ACK, Ansible)Tj ET Q q 1 0 0 1 57.84 143.2 cm .105882 .227451 .360784 rg BT/F2+0 9.2 Tf 0 3.8 TD (Kubernetes)Tj ET Q q 1 0 0 1 151.44 143.2 cm 0 0 0 rg BT/F3+0 9.2 Tf 0 3.8 TD (GKE, EKS, AKS, Helm, ArgoCD, Argo Workflows, KEDA, Karpenter, Traefik)Tj ET Q q 1 0 0 1 57.84 127.0 cm .105882 .227451 .360784 rg BT/F2+0 9.2 Tf 0 3.8 TD (CI/CD & DevSecOps)Tj ET Q q 1 0 0 1 151.44 114.0 cm 0 0 0 rg BT/F3+0 9.2 Tf 0 16.8 TD (GitHub Actions, GitLab CI, Azure DevOps, Jenkins, AWS CodeBuild/Deploy/Pipeline, Artifactory,)Tj 0 -13 TD (SAST, SCA, SBOM, Secret Detection, Checkmarx, Orca, OWASP, WAF, CIS Hardening)Tj ET Q q Q q Q q Q q Q q Q q Q Q q Q q Q q Q Q
-
-q
-40 19.2 532 94 re
-h
-1 1 1 RG 1 1 1 rg B
-Q
-
-q
-BT
-1 0 0 1 57.8 99.6 Tm
-/ResumeBold 9.2 Tf .105882357 .21960785 .36078433 RG .105882357 .21960785 .36078433 rg [<000400920092008e008b008500830096008b00910090000301ac00030007008300960083>]TJ
-ET
-Q
-
-q
-BT
-1 0 0 1 151.4 99.6 Tm
-/ResumeReg 9.2 Tf 0 0 0 RG 0 0 0 rg [<0013009b0096008a0091009001e10003000900830095009600040013000c01e10003001300910095009600890094008700160014000f01e10003001500870086008b009501e1000300060087008e00870094009b01e100030015000800160017000300040013000c0003008600870095008b0089009001e10003001100910086008701e4008c009501e100030017009b00920087001600850094008b0092009601e100030092009b0096008700950096>]TJ
-ET
-Q
-
-q
-BT
-1 0 0 1 57.8 83.4 Tm
-/ResumeBold 9.2 Tf .105882357 .21960785 .36078433 RG .105882357 .21960785 .36078433 rg [<00120084009500870094009800830084008b008e008b0096009b000301ac0003001200920095>]TJ
-ET
-Q
-
-q
-BT
-1 0 0 1 151.4 83.4 Tm
-/ResumeReg 9.2 Tf 0 0 0 RG 0 0 0 rg [<001300940091008f00870096008a00870097009501e10003000a00940083008800830090008301e10003000f0091008d008b01e100030008000f000e01e10003000500830095008a01e10003001300910099008700940016008a0087008e008e>]TJ
-ET
-Q
-
-q
-57.84 56.15001 m
-554.16 56.15001 l
-.75 w
-.607843 .654902 .721569 RG S
-Q
-
-q
-BT
-1 0 0 1 57.8 58.1 Tm
-/ResumeBold 11.4 Tf .105882357 .21960785 .36078433 RG .105882357 .21960785 .36078433 rg [<0006000800150017000c0009000c000600040017000c001200110016>]TJ
-ET
-Q
-
-q
-BT
-1 0 0 1 57.8 40.2 Tm
-/ResumeReg 9 Tf 0 0 0 RG 0 0 0 rg [<0006008700940096008b0088008b008700860003000e009700840087009400900087009600870095000300040086008f008b0090008b0095009600940083009600910094000300030201000300030004001a001600030006008700940096008b0088008b00870086000300160091008e00970096008b0091009000950003000400940085008a008b0096008700850096000301e6000300040095009500910085008b00830096008700030003020100030003000b00830095008a008b000600910094009200030006008700940096008b0088008b0087008601e3000300170087009400940083008800910094008f000300040095009500910085008b008300960087>]TJ
-ET
-Q
-
-endstream
-endobj
 xref
-0 36
+0 35
 0000000000 65535 f 
 0000000015 00000 n 
 0000000172 00000 n 
 0000000231 00000 n 
-0000000478 00000 n 
-0000000657 00000 n 
-0000000875 00000 n 
-0000001053 00000 n 
-0000009586 00000 n 
-0000010031 00000 n 
-0000010292 00000 n 
-0000024011 00000 n 
-0000024758 00000 n 
-0000025260 00000 n 
-0000025513 00000 n 
-0000047803 00000 n 
-0000048546 00000 n 
-0000048999 00000 n 
-0000049265 00000 n 
-0000064352 00000 n 
-0000065100 00000 n 
-0000065251 00000 n 
-0000072652 00000 n 
-0000072849 00000 n 
-0000073060 00000 n 
-0000084105 00000 n 
-0000097719 00000 n 
-0000097873 00000 n 
-0000106531 00000 n 
-0000106731 00000 n 
-0000106946 00000 n 
-0000124725 00000 n 
-0000156131 00000 n 
-0000156330 00000 n 
-0000176622 00000 n 
-0000176959 00000 n 
+0000000477 00000 n 
+0000000656 00000 n 
+0000000874 00000 n 
+0000001052 00000 n 
+0000009574 00000 n 
+0000010019 00000 n 
+0000010280 00000 n 
+0000023999 00000 n 
+0000024746 00000 n 
+0000025248 00000 n 
+0000025501 00000 n 
+0000047791 00000 n 
+0000048534 00000 n 
+0000048987 00000 n 
+0000049253 00000 n 
+0000064340 00000 n 
+0000065088 00000 n 
+0000065239 00000 n 
+0000072640 00000 n 
+0000072837 00000 n 
+0000073048 00000 n 
+0000084093 00000 n 
+0000097707 00000 n 
+0000097861 00000 n 
+0000106519 00000 n 
+0000106719 00000 n 
+0000106934 00000 n 
+0000124713 00000 n 
+0000156119 00000 n 
+0000156318 00000 n 
+0000176610 00000 n 
 trailer
 <<
-/Size 36
+/Size 35
 /Root 1 0 R
 /Info 34 0 R
 /ID [ <ebcf3cd859086f7e39088e0122ffa77a> <f9ef0dd80b119c65a5c3ab62a65b7dfd> ]
 >>
 startxref
-185483
+176947
 %%EOF
